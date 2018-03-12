@@ -20,112 +20,152 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "DAX" :: String
-
 
 -- | <p>Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.</p>
 createCluster :: forall eff. CreateClusterRequest -> Aff (exception :: EXCEPTION | eff) CreateClusterResponse
-createCluster = Request.request serviceName "createCluster" 
+createCluster = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "createCluster"
 
 
 -- | <p>Creates a new parameter group. A parameter group is a collection of parameters that you apply to all of the nodes in a DAX cluster.</p>
 createParameterGroup :: forall eff. CreateParameterGroupRequest -> Aff (exception :: EXCEPTION | eff) CreateParameterGroupResponse
-createParameterGroup = Request.request serviceName "createParameterGroup" 
+createParameterGroup = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "createParameterGroup"
 
 
 -- | <p>Creates a new subnet group.</p>
 createSubnetGroup :: forall eff. CreateSubnetGroupRequest -> Aff (exception :: EXCEPTION | eff) CreateSubnetGroupResponse
-createSubnetGroup = Request.request serviceName "createSubnetGroup" 
+createSubnetGroup = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "createSubnetGroup"
 
 
 -- | <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p> </note>
 decreaseReplicationFactor :: forall eff. DecreaseReplicationFactorRequest -> Aff (exception :: EXCEPTION | eff) DecreaseReplicationFactorResponse
-decreaseReplicationFactor = Request.request serviceName "decreaseReplicationFactor" 
+decreaseReplicationFactor = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "decreaseReplicationFactor"
 
 
 -- | <p>Deletes a previously provisioned DAX cluster. <i>DeleteCluster</i> deletes all associated nodes, node endpoints and the DAX cluster itself. When you receive a successful response from this action, DAX immediately begins deleting the cluster; you cannot cancel or revert this action.</p>
 deleteCluster :: forall eff. DeleteClusterRequest -> Aff (exception :: EXCEPTION | eff) DeleteClusterResponse
-deleteCluster = Request.request serviceName "deleteCluster" 
+deleteCluster = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "deleteCluster"
 
 
 -- | <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters.</p>
 deleteParameterGroup :: forall eff. DeleteParameterGroupRequest -> Aff (exception :: EXCEPTION | eff) DeleteParameterGroupResponse
-deleteParameterGroup = Request.request serviceName "deleteParameterGroup" 
+deleteParameterGroup = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "deleteParameterGroup"
 
 
 -- | <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it is associated with any DAX clusters.</p> </note>
 deleteSubnetGroup :: forall eff. DeleteSubnetGroupRequest -> Aff (exception :: EXCEPTION | eff) DeleteSubnetGroupResponse
-deleteSubnetGroup = Request.request serviceName "deleteSubnetGroup" 
+deleteSubnetGroup = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "deleteSubnetGroup"
 
 
 -- | <p>Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If nodes are currently being added to the DAX cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the DAX cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If nodes are currently being removed from the DAX cluster, no endpoint information for the removed nodes is displayed.</p>
 describeClusters :: forall eff. DescribeClustersRequest -> Aff (exception :: EXCEPTION | eff) DescribeClustersResponse
-describeClusters = Request.request serviceName "describeClusters" 
+describeClusters = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "describeClusters"
 
 
 -- | <p>Returns the default system parameter information for the DAX caching software.</p>
 describeDefaultParameters :: forall eff. DescribeDefaultParametersRequest -> Aff (exception :: EXCEPTION | eff) DescribeDefaultParametersResponse
-describeDefaultParameters = Request.request serviceName "describeDefaultParameters" 
+describeDefaultParameters = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "describeDefaultParameters"
 
 
 -- | <p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
 describeEvents :: forall eff. DescribeEventsRequest -> Aff (exception :: EXCEPTION | eff) DescribeEventsResponse
-describeEvents = Request.request serviceName "describeEvents" 
+describeEvents = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "describeEvents"
 
 
 -- | <p>Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.</p>
 describeParameterGroups :: forall eff. DescribeParameterGroupsRequest -> Aff (exception :: EXCEPTION | eff) DescribeParameterGroupsResponse
-describeParameterGroups = Request.request serviceName "describeParameterGroups" 
+describeParameterGroups = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "describeParameterGroups"
 
 
 -- | <p>Returns the detailed parameter list for a particular parameter group.</p>
 describeParameters :: forall eff. DescribeParametersRequest -> Aff (exception :: EXCEPTION | eff) DescribeParametersResponse
-describeParameters = Request.request serviceName "describeParameters" 
+describeParameters = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "describeParameters"
 
 
 -- | <p>Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
 describeSubnetGroups :: forall eff. DescribeSubnetGroupsRequest -> Aff (exception :: EXCEPTION | eff) DescribeSubnetGroupsResponse
-describeSubnetGroups = Request.request serviceName "describeSubnetGroups" 
+describeSubnetGroups = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "describeSubnetGroups"
 
 
 -- | <p>Adds one or more nodes to a DAX cluster.</p>
 increaseReplicationFactor :: forall eff. IncreaseReplicationFactorRequest -> Aff (exception :: EXCEPTION | eff) IncreaseReplicationFactorResponse
-increaseReplicationFactor = Request.request serviceName "increaseReplicationFactor" 
+increaseReplicationFactor = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "increaseReplicationFactor"
 
 
 -- | <p>List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10 times per second, per account.</p>
 listTags :: forall eff. ListTagsRequest -> Aff (exception :: EXCEPTION | eff) ListTagsResponse
-listTags = Request.request serviceName "listTags" 
+listTags = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "listTags"
 
 
 -- | <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.</p>
 rebootNode :: forall eff. RebootNodeRequest -> Aff (exception :: EXCEPTION | eff) RebootNodeResponse
-rebootNode = Request.request serviceName "rebootNode" 
+rebootNode = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "rebootNode"
 
 
 -- | <p>Associates a set of tags with a DAX resource. You can call <code>TagResource</code> up to 5 times per second, per account. </p>
 tagResource :: forall eff. TagResourceRequest -> Aff (exception :: EXCEPTION | eff) TagResourceResponse
-tagResource = Request.request serviceName "tagResource" 
+tagResource = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "tagResource"
 
 
 -- | <p>Removes the association of tags from a DAX resource. You can call <code>UntagResource</code> up to 5 times per second, per account. </p>
 untagResource :: forall eff. UntagResourceRequest -> Aff (exception :: EXCEPTION | eff) UntagResourceResponse
-untagResource = Request.request serviceName "untagResource" 
+untagResource = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "untagResource"
 
 
 -- | <p>Modifies the settings for a DAX cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
 updateCluster :: forall eff. UpdateClusterRequest -> Aff (exception :: EXCEPTION | eff) UpdateClusterResponse
-updateCluster = Request.request serviceName "updateCluster" 
+updateCluster = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "updateCluster"
 
 
 -- | <p>Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
 updateParameterGroup :: forall eff. UpdateParameterGroupRequest -> Aff (exception :: EXCEPTION | eff) UpdateParameterGroupResponse
-updateParameterGroup = Request.request serviceName "updateParameterGroup" 
+updateParameterGroup = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "updateParameterGroup"
 
 
 -- | <p>Modifies an existing subnet group.</p>
 updateSubnetGroup :: forall eff. UpdateSubnetGroupRequest -> Aff (exception :: EXCEPTION | eff) UpdateSubnetGroupResponse
-updateSubnetGroup = Request.request serviceName "updateSubnetGroup" 
+updateSubnetGroup = Request.request service method  where
+    service = Request.ServiceName "DAX"
+    method = Request.MethodName "updateSubnetGroup"
 
 
 newtype AvailabilityZoneList = AvailabilityZoneList (Array String)
