@@ -58,7 +58,7 @@ Encode ChangeType
 
 ``` purescript
 newtype Cluster
-  = Cluster { "ClusterName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "ClusterArn" :: NullOrUndefined (String), "TotalNodes" :: NullOrUndefined (IntegerOptional), "ActiveNodes" :: NullOrUndefined (IntegerOptional), "NodeType" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "ClusterDiscoveryEndpoint" :: NullOrUndefined (Endpoint), "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList), "Nodes" :: NullOrUndefined (NodeList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration), "SubnetGroup" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList), "IamRoleArn" :: NullOrUndefined (String), "ParameterGroup" :: NullOrUndefined (ParameterGroupStatus) }
+  = Cluster { "ClusterName" :: Maybe (String), "Description" :: Maybe (String), "ClusterArn" :: Maybe (String), "TotalNodes" :: Maybe (IntegerOptional), "ActiveNodes" :: Maybe (IntegerOptional), "NodeType" :: Maybe (String), "Status" :: Maybe (String), "ClusterDiscoveryEndpoint" :: Maybe (Endpoint), "NodeIdsToRemove" :: Maybe (NodeIdentifierList), "Nodes" :: Maybe (NodeList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationConfiguration" :: Maybe (NotificationConfiguration), "SubnetGroup" :: Maybe (String), "SecurityGroups" :: Maybe (SecurityGroupMembershipList), "IamRoleArn" :: Maybe (String), "ParameterGroup" :: Maybe (ParameterGroupStatus) }
 ```
 
 <p>Contains all of the attributes of a specific DAX cluster.</p>
@@ -83,7 +83,7 @@ Constructs Cluster from required parameters
 #### `newCluster'`
 
 ``` purescript
-newCluster' :: ({ "ClusterName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "ClusterArn" :: NullOrUndefined (String), "TotalNodes" :: NullOrUndefined (IntegerOptional), "ActiveNodes" :: NullOrUndefined (IntegerOptional), "NodeType" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "ClusterDiscoveryEndpoint" :: NullOrUndefined (Endpoint), "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList), "Nodes" :: NullOrUndefined (NodeList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration), "SubnetGroup" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList), "IamRoleArn" :: NullOrUndefined (String), "ParameterGroup" :: NullOrUndefined (ParameterGroupStatus) } -> { "ClusterName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "ClusterArn" :: NullOrUndefined (String), "TotalNodes" :: NullOrUndefined (IntegerOptional), "ActiveNodes" :: NullOrUndefined (IntegerOptional), "NodeType" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "ClusterDiscoveryEndpoint" :: NullOrUndefined (Endpoint), "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList), "Nodes" :: NullOrUndefined (NodeList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration), "SubnetGroup" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList), "IamRoleArn" :: NullOrUndefined (String), "ParameterGroup" :: NullOrUndefined (ParameterGroupStatus) }) -> Cluster
+newCluster' :: ({ "ClusterName" :: Maybe (String), "Description" :: Maybe (String), "ClusterArn" :: Maybe (String), "TotalNodes" :: Maybe (IntegerOptional), "ActiveNodes" :: Maybe (IntegerOptional), "NodeType" :: Maybe (String), "Status" :: Maybe (String), "ClusterDiscoveryEndpoint" :: Maybe (Endpoint), "NodeIdsToRemove" :: Maybe (NodeIdentifierList), "Nodes" :: Maybe (NodeList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationConfiguration" :: Maybe (NotificationConfiguration), "SubnetGroup" :: Maybe (String), "SecurityGroups" :: Maybe (SecurityGroupMembershipList), "IamRoleArn" :: Maybe (String), "ParameterGroup" :: Maybe (ParameterGroupStatus) } -> { "ClusterName" :: Maybe (String), "Description" :: Maybe (String), "ClusterArn" :: Maybe (String), "TotalNodes" :: Maybe (IntegerOptional), "ActiveNodes" :: Maybe (IntegerOptional), "NodeType" :: Maybe (String), "Status" :: Maybe (String), "ClusterDiscoveryEndpoint" :: Maybe (Endpoint), "NodeIdsToRemove" :: Maybe (NodeIdentifierList), "Nodes" :: Maybe (NodeList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationConfiguration" :: Maybe (NotificationConfiguration), "SubnetGroup" :: Maybe (String), "SecurityGroups" :: Maybe (SecurityGroupMembershipList), "IamRoleArn" :: Maybe (String), "ParameterGroup" :: Maybe (ParameterGroupStatus) }) -> Cluster
 ```
 
 Constructs Cluster's fields from required parameters
@@ -178,7 +178,7 @@ Encode ClusterQuotaForCustomerExceededFault
 
 ``` purescript
 newtype CreateClusterRequest
-  = CreateClusterRequest { "ClusterName" :: String, "NodeType" :: String, "Description" :: NullOrUndefined (String), "ReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList), "SubnetGroupName" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "IamRoleArn" :: String, "ParameterGroupName" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = CreateClusterRequest { "ClusterName" :: String, "NodeType" :: String, "Description" :: Maybe (String), "ReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList), "SubnetGroupName" :: Maybe (String), "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "IamRoleArn" :: String, "ParameterGroupName" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 ##### Instances
@@ -201,7 +201,7 @@ Constructs CreateClusterRequest from required parameters
 #### `newCreateClusterRequest'`
 
 ``` purescript
-newCreateClusterRequest' :: String -> String -> String -> Int -> ({ "ClusterName" :: String, "NodeType" :: String, "Description" :: NullOrUndefined (String), "ReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList), "SubnetGroupName" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "IamRoleArn" :: String, "ParameterGroupName" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "ClusterName" :: String, "NodeType" :: String, "Description" :: NullOrUndefined (String), "ReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList), "SubnetGroupName" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "IamRoleArn" :: String, "ParameterGroupName" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> CreateClusterRequest
+newCreateClusterRequest' :: String -> String -> String -> Int -> ({ "ClusterName" :: String, "NodeType" :: String, "Description" :: Maybe (String), "ReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList), "SubnetGroupName" :: Maybe (String), "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "IamRoleArn" :: String, "ParameterGroupName" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "ClusterName" :: String, "NodeType" :: String, "Description" :: Maybe (String), "ReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList), "SubnetGroupName" :: Maybe (String), "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "IamRoleArn" :: String, "ParameterGroupName" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> CreateClusterRequest
 ```
 
 Constructs CreateClusterRequest's fields from required parameters
@@ -210,7 +210,7 @@ Constructs CreateClusterRequest's fields from required parameters
 
 ``` purescript
 newtype CreateClusterResponse
-  = CreateClusterResponse { "Cluster" :: NullOrUndefined (Cluster) }
+  = CreateClusterResponse { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -233,7 +233,7 @@ Constructs CreateClusterResponse from required parameters
 #### `newCreateClusterResponse'`
 
 ``` purescript
-newCreateClusterResponse' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> CreateClusterResponse
+newCreateClusterResponse' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> CreateClusterResponse
 ```
 
 Constructs CreateClusterResponse's fields from required parameters
@@ -242,7 +242,7 @@ Constructs CreateClusterResponse's fields from required parameters
 
 ``` purescript
 newtype CreateParameterGroupRequest
-  = CreateParameterGroupRequest { "ParameterGroupName" :: String, "Description" :: NullOrUndefined (String) }
+  = CreateParameterGroupRequest { "ParameterGroupName" :: String, "Description" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -265,7 +265,7 @@ Constructs CreateParameterGroupRequest from required parameters
 #### `newCreateParameterGroupRequest'`
 
 ``` purescript
-newCreateParameterGroupRequest' :: String -> ({ "ParameterGroupName" :: String, "Description" :: NullOrUndefined (String) } -> { "ParameterGroupName" :: String, "Description" :: NullOrUndefined (String) }) -> CreateParameterGroupRequest
+newCreateParameterGroupRequest' :: String -> ({ "ParameterGroupName" :: String, "Description" :: Maybe (String) } -> { "ParameterGroupName" :: String, "Description" :: Maybe (String) }) -> CreateParameterGroupRequest
 ```
 
 Constructs CreateParameterGroupRequest's fields from required parameters
@@ -274,7 +274,7 @@ Constructs CreateParameterGroupRequest's fields from required parameters
 
 ``` purescript
 newtype CreateParameterGroupResponse
-  = CreateParameterGroupResponse { "ParameterGroup" :: NullOrUndefined (ParameterGroup) }
+  = CreateParameterGroupResponse { "ParameterGroup" :: Maybe (ParameterGroup) }
 ```
 
 ##### Instances
@@ -297,7 +297,7 @@ Constructs CreateParameterGroupResponse from required parameters
 #### `newCreateParameterGroupResponse'`
 
 ``` purescript
-newCreateParameterGroupResponse' :: ({ "ParameterGroup" :: NullOrUndefined (ParameterGroup) } -> { "ParameterGroup" :: NullOrUndefined (ParameterGroup) }) -> CreateParameterGroupResponse
+newCreateParameterGroupResponse' :: ({ "ParameterGroup" :: Maybe (ParameterGroup) } -> { "ParameterGroup" :: Maybe (ParameterGroup) }) -> CreateParameterGroupResponse
 ```
 
 Constructs CreateParameterGroupResponse's fields from required parameters
@@ -306,7 +306,7 @@ Constructs CreateParameterGroupResponse's fields from required parameters
 
 ``` purescript
 newtype CreateSubnetGroupRequest
-  = CreateSubnetGroupRequest { "SubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList }
+  = CreateSubnetGroupRequest { "SubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList }
 ```
 
 ##### Instances
@@ -329,7 +329,7 @@ Constructs CreateSubnetGroupRequest from required parameters
 #### `newCreateSubnetGroupRequest'`
 
 ``` purescript
-newCreateSubnetGroupRequest' :: String -> SubnetIdentifierList -> ({ "SubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList } -> { "SubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList }) -> CreateSubnetGroupRequest
+newCreateSubnetGroupRequest' :: String -> SubnetIdentifierList -> ({ "SubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList } -> { "SubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList }) -> CreateSubnetGroupRequest
 ```
 
 Constructs CreateSubnetGroupRequest's fields from required parameters
@@ -338,7 +338,7 @@ Constructs CreateSubnetGroupRequest's fields from required parameters
 
 ``` purescript
 newtype CreateSubnetGroupResponse
-  = CreateSubnetGroupResponse { "SubnetGroup" :: NullOrUndefined (SubnetGroup) }
+  = CreateSubnetGroupResponse { "SubnetGroup" :: Maybe (SubnetGroup) }
 ```
 
 ##### Instances
@@ -361,7 +361,7 @@ Constructs CreateSubnetGroupResponse from required parameters
 #### `newCreateSubnetGroupResponse'`
 
 ``` purescript
-newCreateSubnetGroupResponse' :: ({ "SubnetGroup" :: NullOrUndefined (SubnetGroup) } -> { "SubnetGroup" :: NullOrUndefined (SubnetGroup) }) -> CreateSubnetGroupResponse
+newCreateSubnetGroupResponse' :: ({ "SubnetGroup" :: Maybe (SubnetGroup) } -> { "SubnetGroup" :: Maybe (SubnetGroup) }) -> CreateSubnetGroupResponse
 ```
 
 Constructs CreateSubnetGroupResponse's fields from required parameters
@@ -370,7 +370,7 @@ Constructs CreateSubnetGroupResponse's fields from required parameters
 
 ``` purescript
 newtype DecreaseReplicationFactorRequest
-  = DecreaseReplicationFactorRequest { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList), "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) }
+  = DecreaseReplicationFactorRequest { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList), "NodeIdsToRemove" :: Maybe (NodeIdentifierList) }
 ```
 
 ##### Instances
@@ -393,7 +393,7 @@ Constructs DecreaseReplicationFactorRequest from required parameters
 #### `newDecreaseReplicationFactorRequest'`
 
 ``` purescript
-newDecreaseReplicationFactorRequest' :: String -> Int -> ({ "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList), "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) } -> { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList), "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) }) -> DecreaseReplicationFactorRequest
+newDecreaseReplicationFactorRequest' :: String -> Int -> ({ "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList), "NodeIdsToRemove" :: Maybe (NodeIdentifierList) } -> { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList), "NodeIdsToRemove" :: Maybe (NodeIdentifierList) }) -> DecreaseReplicationFactorRequest
 ```
 
 Constructs DecreaseReplicationFactorRequest's fields from required parameters
@@ -402,7 +402,7 @@ Constructs DecreaseReplicationFactorRequest's fields from required parameters
 
 ``` purescript
 newtype DecreaseReplicationFactorResponse
-  = DecreaseReplicationFactorResponse { "Cluster" :: NullOrUndefined (Cluster) }
+  = DecreaseReplicationFactorResponse { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -425,7 +425,7 @@ Constructs DecreaseReplicationFactorResponse from required parameters
 #### `newDecreaseReplicationFactorResponse'`
 
 ``` purescript
-newDecreaseReplicationFactorResponse' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> DecreaseReplicationFactorResponse
+newDecreaseReplicationFactorResponse' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> DecreaseReplicationFactorResponse
 ```
 
 Constructs DecreaseReplicationFactorResponse's fields from required parameters
@@ -466,7 +466,7 @@ Constructs DeleteClusterRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteClusterResponse
-  = DeleteClusterResponse { "Cluster" :: NullOrUndefined (Cluster) }
+  = DeleteClusterResponse { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -489,7 +489,7 @@ Constructs DeleteClusterResponse from required parameters
 #### `newDeleteClusterResponse'`
 
 ``` purescript
-newDeleteClusterResponse' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> DeleteClusterResponse
+newDeleteClusterResponse' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> DeleteClusterResponse
 ```
 
 Constructs DeleteClusterResponse's fields from required parameters
@@ -530,7 +530,7 @@ Constructs DeleteParameterGroupRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteParameterGroupResponse
-  = DeleteParameterGroupResponse { "DeletionMessage" :: NullOrUndefined (String) }
+  = DeleteParameterGroupResponse { "DeletionMessage" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -553,7 +553,7 @@ Constructs DeleteParameterGroupResponse from required parameters
 #### `newDeleteParameterGroupResponse'`
 
 ``` purescript
-newDeleteParameterGroupResponse' :: ({ "DeletionMessage" :: NullOrUndefined (String) } -> { "DeletionMessage" :: NullOrUndefined (String) }) -> DeleteParameterGroupResponse
+newDeleteParameterGroupResponse' :: ({ "DeletionMessage" :: Maybe (String) } -> { "DeletionMessage" :: Maybe (String) }) -> DeleteParameterGroupResponse
 ```
 
 Constructs DeleteParameterGroupResponse's fields from required parameters
@@ -594,7 +594,7 @@ Constructs DeleteSubnetGroupRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteSubnetGroupResponse
-  = DeleteSubnetGroupResponse { "DeletionMessage" :: NullOrUndefined (String) }
+  = DeleteSubnetGroupResponse { "DeletionMessage" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -617,7 +617,7 @@ Constructs DeleteSubnetGroupResponse from required parameters
 #### `newDeleteSubnetGroupResponse'`
 
 ``` purescript
-newDeleteSubnetGroupResponse' :: ({ "DeletionMessage" :: NullOrUndefined (String) } -> { "DeletionMessage" :: NullOrUndefined (String) }) -> DeleteSubnetGroupResponse
+newDeleteSubnetGroupResponse' :: ({ "DeletionMessage" :: Maybe (String) } -> { "DeletionMessage" :: Maybe (String) }) -> DeleteSubnetGroupResponse
 ```
 
 Constructs DeleteSubnetGroupResponse's fields from required parameters
@@ -626,7 +626,7 @@ Constructs DeleteSubnetGroupResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeClustersRequest
-  = DescribeClustersRequest { "ClusterNames" :: NullOrUndefined (ClusterNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }
+  = DescribeClustersRequest { "ClusterNames" :: Maybe (ClusterNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -649,7 +649,7 @@ Constructs DescribeClustersRequest from required parameters
 #### `newDescribeClustersRequest'`
 
 ``` purescript
-newDescribeClustersRequest' :: ({ "ClusterNames" :: NullOrUndefined (ClusterNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) } -> { "ClusterNames" :: NullOrUndefined (ClusterNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }) -> DescribeClustersRequest
+newDescribeClustersRequest' :: ({ "ClusterNames" :: Maybe (ClusterNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) } -> { "ClusterNames" :: Maybe (ClusterNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }) -> DescribeClustersRequest
 ```
 
 Constructs DescribeClustersRequest's fields from required parameters
@@ -658,7 +658,7 @@ Constructs DescribeClustersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeClustersResponse
-  = DescribeClustersResponse { "NextToken" :: NullOrUndefined (String), "Clusters" :: NullOrUndefined (ClusterList) }
+  = DescribeClustersResponse { "NextToken" :: Maybe (String), "Clusters" :: Maybe (ClusterList) }
 ```
 
 ##### Instances
@@ -681,7 +681,7 @@ Constructs DescribeClustersResponse from required parameters
 #### `newDescribeClustersResponse'`
 
 ``` purescript
-newDescribeClustersResponse' :: ({ "NextToken" :: NullOrUndefined (String), "Clusters" :: NullOrUndefined (ClusterList) } -> { "NextToken" :: NullOrUndefined (String), "Clusters" :: NullOrUndefined (ClusterList) }) -> DescribeClustersResponse
+newDescribeClustersResponse' :: ({ "NextToken" :: Maybe (String), "Clusters" :: Maybe (ClusterList) } -> { "NextToken" :: Maybe (String), "Clusters" :: Maybe (ClusterList) }) -> DescribeClustersResponse
 ```
 
 Constructs DescribeClustersResponse's fields from required parameters
@@ -690,7 +690,7 @@ Constructs DescribeClustersResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeDefaultParametersRequest
-  = DescribeDefaultParametersRequest { "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }
+  = DescribeDefaultParametersRequest { "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -713,7 +713,7 @@ Constructs DescribeDefaultParametersRequest from required parameters
 #### `newDescribeDefaultParametersRequest'`
 
 ``` purescript
-newDescribeDefaultParametersRequest' :: ({ "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }) -> DescribeDefaultParametersRequest
+newDescribeDefaultParametersRequest' :: ({ "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }) -> DescribeDefaultParametersRequest
 ```
 
 Constructs DescribeDefaultParametersRequest's fields from required parameters
@@ -722,7 +722,7 @@ Constructs DescribeDefaultParametersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDefaultParametersResponse
-  = DescribeDefaultParametersResponse { "NextToken" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParameterList) }
+  = DescribeDefaultParametersResponse { "NextToken" :: Maybe (String), "Parameters" :: Maybe (ParameterList) }
 ```
 
 ##### Instances
@@ -745,7 +745,7 @@ Constructs DescribeDefaultParametersResponse from required parameters
 #### `newDescribeDefaultParametersResponse'`
 
 ``` purescript
-newDescribeDefaultParametersResponse' :: ({ "NextToken" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParameterList) } -> { "NextToken" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParameterList) }) -> DescribeDefaultParametersResponse
+newDescribeDefaultParametersResponse' :: ({ "NextToken" :: Maybe (String), "Parameters" :: Maybe (ParameterList) } -> { "NextToken" :: Maybe (String), "Parameters" :: Maybe (ParameterList) }) -> DescribeDefaultParametersResponse
 ```
 
 Constructs DescribeDefaultParametersResponse's fields from required parameters
@@ -754,7 +754,7 @@ Constructs DescribeDefaultParametersResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeEventsRequest
-  = DescribeEventsRequest { "SourceName" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }
+  = DescribeEventsRequest { "SourceName" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -777,7 +777,7 @@ Constructs DescribeEventsRequest from required parameters
 #### `newDescribeEventsRequest'`
 
 ``` purescript
-newDescribeEventsRequest' :: ({ "SourceName" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) } -> { "SourceName" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }) -> DescribeEventsRequest
+newDescribeEventsRequest' :: ({ "SourceName" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) } -> { "SourceName" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }) -> DescribeEventsRequest
 ```
 
 Constructs DescribeEventsRequest's fields from required parameters
@@ -786,7 +786,7 @@ Constructs DescribeEventsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeEventsResponse
-  = DescribeEventsResponse { "NextToken" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }
+  = DescribeEventsResponse { "NextToken" :: Maybe (String), "Events" :: Maybe (EventList) }
 ```
 
 ##### Instances
@@ -809,7 +809,7 @@ Constructs DescribeEventsResponse from required parameters
 #### `newDescribeEventsResponse'`
 
 ``` purescript
-newDescribeEventsResponse' :: ({ "NextToken" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) } -> { "NextToken" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }) -> DescribeEventsResponse
+newDescribeEventsResponse' :: ({ "NextToken" :: Maybe (String), "Events" :: Maybe (EventList) } -> { "NextToken" :: Maybe (String), "Events" :: Maybe (EventList) }) -> DescribeEventsResponse
 ```
 
 Constructs DescribeEventsResponse's fields from required parameters
@@ -818,7 +818,7 @@ Constructs DescribeEventsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeParameterGroupsRequest
-  = DescribeParameterGroupsRequest { "ParameterGroupNames" :: NullOrUndefined (ParameterGroupNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }
+  = DescribeParameterGroupsRequest { "ParameterGroupNames" :: Maybe (ParameterGroupNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -841,7 +841,7 @@ Constructs DescribeParameterGroupsRequest from required parameters
 #### `newDescribeParameterGroupsRequest'`
 
 ``` purescript
-newDescribeParameterGroupsRequest' :: ({ "ParameterGroupNames" :: NullOrUndefined (ParameterGroupNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) } -> { "ParameterGroupNames" :: NullOrUndefined (ParameterGroupNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }) -> DescribeParameterGroupsRequest
+newDescribeParameterGroupsRequest' :: ({ "ParameterGroupNames" :: Maybe (ParameterGroupNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) } -> { "ParameterGroupNames" :: Maybe (ParameterGroupNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }) -> DescribeParameterGroupsRequest
 ```
 
 Constructs DescribeParameterGroupsRequest's fields from required parameters
@@ -850,7 +850,7 @@ Constructs DescribeParameterGroupsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeParameterGroupsResponse
-  = DescribeParameterGroupsResponse { "NextToken" :: NullOrUndefined (String), "ParameterGroups" :: NullOrUndefined (ParameterGroupList) }
+  = DescribeParameterGroupsResponse { "NextToken" :: Maybe (String), "ParameterGroups" :: Maybe (ParameterGroupList) }
 ```
 
 ##### Instances
@@ -873,7 +873,7 @@ Constructs DescribeParameterGroupsResponse from required parameters
 #### `newDescribeParameterGroupsResponse'`
 
 ``` purescript
-newDescribeParameterGroupsResponse' :: ({ "NextToken" :: NullOrUndefined (String), "ParameterGroups" :: NullOrUndefined (ParameterGroupList) } -> { "NextToken" :: NullOrUndefined (String), "ParameterGroups" :: NullOrUndefined (ParameterGroupList) }) -> DescribeParameterGroupsResponse
+newDescribeParameterGroupsResponse' :: ({ "NextToken" :: Maybe (String), "ParameterGroups" :: Maybe (ParameterGroupList) } -> { "NextToken" :: Maybe (String), "ParameterGroups" :: Maybe (ParameterGroupList) }) -> DescribeParameterGroupsResponse
 ```
 
 Constructs DescribeParameterGroupsResponse's fields from required parameters
@@ -882,7 +882,7 @@ Constructs DescribeParameterGroupsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeParametersRequest
-  = DescribeParametersRequest { "ParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }
+  = DescribeParametersRequest { "ParameterGroupName" :: String, "Source" :: Maybe (String), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -905,7 +905,7 @@ Constructs DescribeParametersRequest from required parameters
 #### `newDescribeParametersRequest'`
 
 ``` purescript
-newDescribeParametersRequest' :: String -> ({ "ParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) } -> { "ParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }) -> DescribeParametersRequest
+newDescribeParametersRequest' :: String -> ({ "ParameterGroupName" :: String, "Source" :: Maybe (String), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) } -> { "ParameterGroupName" :: String, "Source" :: Maybe (String), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }) -> DescribeParametersRequest
 ```
 
 Constructs DescribeParametersRequest's fields from required parameters
@@ -914,7 +914,7 @@ Constructs DescribeParametersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeParametersResponse
-  = DescribeParametersResponse { "NextToken" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParameterList) }
+  = DescribeParametersResponse { "NextToken" :: Maybe (String), "Parameters" :: Maybe (ParameterList) }
 ```
 
 ##### Instances
@@ -937,7 +937,7 @@ Constructs DescribeParametersResponse from required parameters
 #### `newDescribeParametersResponse'`
 
 ``` purescript
-newDescribeParametersResponse' :: ({ "NextToken" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParameterList) } -> { "NextToken" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParameterList) }) -> DescribeParametersResponse
+newDescribeParametersResponse' :: ({ "NextToken" :: Maybe (String), "Parameters" :: Maybe (ParameterList) } -> { "NextToken" :: Maybe (String), "Parameters" :: Maybe (ParameterList) }) -> DescribeParametersResponse
 ```
 
 Constructs DescribeParametersResponse's fields from required parameters
@@ -946,7 +946,7 @@ Constructs DescribeParametersResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeSubnetGroupsRequest
-  = DescribeSubnetGroupsRequest { "SubnetGroupNames" :: NullOrUndefined (SubnetGroupNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }
+  = DescribeSubnetGroupsRequest { "SubnetGroupNames" :: Maybe (SubnetGroupNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -969,7 +969,7 @@ Constructs DescribeSubnetGroupsRequest from required parameters
 #### `newDescribeSubnetGroupsRequest'`
 
 ``` purescript
-newDescribeSubnetGroupsRequest' :: ({ "SubnetGroupNames" :: NullOrUndefined (SubnetGroupNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) } -> { "SubnetGroupNames" :: NullOrUndefined (SubnetGroupNameList), "MaxResults" :: NullOrUndefined (IntegerOptional), "NextToken" :: NullOrUndefined (String) }) -> DescribeSubnetGroupsRequest
+newDescribeSubnetGroupsRequest' :: ({ "SubnetGroupNames" :: Maybe (SubnetGroupNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) } -> { "SubnetGroupNames" :: Maybe (SubnetGroupNameList), "MaxResults" :: Maybe (IntegerOptional), "NextToken" :: Maybe (String) }) -> DescribeSubnetGroupsRequest
 ```
 
 Constructs DescribeSubnetGroupsRequest's fields from required parameters
@@ -978,7 +978,7 @@ Constructs DescribeSubnetGroupsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeSubnetGroupsResponse
-  = DescribeSubnetGroupsResponse { "NextToken" :: NullOrUndefined (String), "SubnetGroups" :: NullOrUndefined (SubnetGroupList) }
+  = DescribeSubnetGroupsResponse { "NextToken" :: Maybe (String), "SubnetGroups" :: Maybe (SubnetGroupList) }
 ```
 
 ##### Instances
@@ -1001,7 +1001,7 @@ Constructs DescribeSubnetGroupsResponse from required parameters
 #### `newDescribeSubnetGroupsResponse'`
 
 ``` purescript
-newDescribeSubnetGroupsResponse' :: ({ "NextToken" :: NullOrUndefined (String), "SubnetGroups" :: NullOrUndefined (SubnetGroupList) } -> { "NextToken" :: NullOrUndefined (String), "SubnetGroups" :: NullOrUndefined (SubnetGroupList) }) -> DescribeSubnetGroupsResponse
+newDescribeSubnetGroupsResponse' :: ({ "NextToken" :: Maybe (String), "SubnetGroups" :: Maybe (SubnetGroupList) } -> { "NextToken" :: Maybe (String), "SubnetGroups" :: Maybe (SubnetGroupList) }) -> DescribeSubnetGroupsResponse
 ```
 
 Constructs DescribeSubnetGroupsResponse's fields from required parameters
@@ -1010,7 +1010,7 @@ Constructs DescribeSubnetGroupsResponse's fields from required parameters
 
 ``` purescript
 newtype Endpoint
-  = Endpoint { "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) }
+  = Endpoint { "Address" :: Maybe (String), "Port" :: Maybe (Int) }
 ```
 
 <p>Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.</p>
@@ -1035,7 +1035,7 @@ Constructs Endpoint from required parameters
 #### `newEndpoint'`
 
 ``` purescript
-newEndpoint' :: ({ "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) } -> { "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) }) -> Endpoint
+newEndpoint' :: ({ "Address" :: Maybe (String), "Port" :: Maybe (Int) } -> { "Address" :: Maybe (String), "Port" :: Maybe (Int) }) -> Endpoint
 ```
 
 Constructs Endpoint's fields from required parameters
@@ -1044,7 +1044,7 @@ Constructs Endpoint's fields from required parameters
 
 ``` purescript
 newtype Event
-  = Event { "SourceName" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp) }
+  = Event { "SourceName" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "Date" :: Maybe (TStamp) }
 ```
 
 <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.</p>
@@ -1069,7 +1069,7 @@ Constructs Event from required parameters
 #### `newEvent'`
 
 ``` purescript
-newEvent' :: ({ "SourceName" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp) } -> { "SourceName" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp) }) -> Event
+newEvent' :: ({ "SourceName" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "Date" :: Maybe (TStamp) } -> { "SourceName" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "Date" :: Maybe (TStamp) }) -> Event
 ```
 
 Constructs Event's fields from required parameters
@@ -1094,7 +1094,7 @@ Encode EventList
 
 ``` purescript
 newtype IncreaseReplicationFactorRequest
-  = IncreaseReplicationFactorRequest { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) }
+  = IncreaseReplicationFactorRequest { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList) }
 ```
 
 ##### Instances
@@ -1117,7 +1117,7 @@ Constructs IncreaseReplicationFactorRequest from required parameters
 #### `newIncreaseReplicationFactorRequest'`
 
 ``` purescript
-newIncreaseReplicationFactorRequest' :: String -> Int -> ({ "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) } -> { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) }) -> IncreaseReplicationFactorRequest
+newIncreaseReplicationFactorRequest' :: String -> Int -> ({ "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList) } -> { "ClusterName" :: String, "NewReplicationFactor" :: Int, "AvailabilityZones" :: Maybe (AvailabilityZoneList) }) -> IncreaseReplicationFactorRequest
 ```
 
 Constructs IncreaseReplicationFactorRequest's fields from required parameters
@@ -1126,7 +1126,7 @@ Constructs IncreaseReplicationFactorRequest's fields from required parameters
 
 ``` purescript
 newtype IncreaseReplicationFactorResponse
-  = IncreaseReplicationFactorResponse { "Cluster" :: NullOrUndefined (Cluster) }
+  = IncreaseReplicationFactorResponse { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -1149,7 +1149,7 @@ Constructs IncreaseReplicationFactorResponse from required parameters
 #### `newIncreaseReplicationFactorResponse'`
 
 ``` purescript
-newIncreaseReplicationFactorResponse' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> IncreaseReplicationFactorResponse
+newIncreaseReplicationFactorResponse' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> IncreaseReplicationFactorResponse
 ```
 
 Constructs IncreaseReplicationFactorResponse's fields from required parameters
@@ -1228,7 +1228,7 @@ Encode InvalidClusterStateFault
 
 ``` purescript
 newtype InvalidParameterCombinationException
-  = InvalidParameterCombinationException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = InvalidParameterCombinationException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>Two or more incompatible parameters were specified.</p>
@@ -1253,7 +1253,7 @@ Constructs InvalidParameterCombinationException from required parameters
 #### `newInvalidParameterCombinationException'`
 
 ``` purescript
-newInvalidParameterCombinationException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> InvalidParameterCombinationException
+newInvalidParameterCombinationException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> InvalidParameterCombinationException
 ```
 
 Constructs InvalidParameterCombinationException's fields from required parameters
@@ -1280,7 +1280,7 @@ Encode InvalidParameterGroupStateFault
 
 ``` purescript
 newtype InvalidParameterValueException
-  = InvalidParameterValueException { message :: NullOrUndefined (AwsQueryErrorMessage) }
+  = InvalidParameterValueException { message :: Maybe (AwsQueryErrorMessage) }
 ```
 
 <p>The value for a parameter is invalid.</p>
@@ -1305,7 +1305,7 @@ Constructs InvalidParameterValueException from required parameters
 #### `newInvalidParameterValueException'`
 
 ``` purescript
-newInvalidParameterValueException' :: ({ message :: NullOrUndefined (AwsQueryErrorMessage) } -> { message :: NullOrUndefined (AwsQueryErrorMessage) }) -> InvalidParameterValueException
+newInvalidParameterValueException' :: ({ message :: Maybe (AwsQueryErrorMessage) } -> { message :: Maybe (AwsQueryErrorMessage) }) -> InvalidParameterValueException
 ```
 
 Constructs InvalidParameterValueException's fields from required parameters
@@ -1382,7 +1382,7 @@ Encode KeyList
 
 ``` purescript
 newtype ListTagsRequest
-  = ListTagsRequest { "ResourceName" :: String, "NextToken" :: NullOrUndefined (String) }
+  = ListTagsRequest { "ResourceName" :: String, "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1405,7 +1405,7 @@ Constructs ListTagsRequest from required parameters
 #### `newListTagsRequest'`
 
 ``` purescript
-newListTagsRequest' :: String -> ({ "ResourceName" :: String, "NextToken" :: NullOrUndefined (String) } -> { "ResourceName" :: String, "NextToken" :: NullOrUndefined (String) }) -> ListTagsRequest
+newListTagsRequest' :: String -> ({ "ResourceName" :: String, "NextToken" :: Maybe (String) } -> { "ResourceName" :: String, "NextToken" :: Maybe (String) }) -> ListTagsRequest
 ```
 
 Constructs ListTagsRequest's fields from required parameters
@@ -1414,7 +1414,7 @@ Constructs ListTagsRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsResponse
-  = ListTagsResponse { "Tags" :: NullOrUndefined (TagList), "NextToken" :: NullOrUndefined (String) }
+  = ListTagsResponse { "Tags" :: Maybe (TagList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1437,7 +1437,7 @@ Constructs ListTagsResponse from required parameters
 #### `newListTagsResponse'`
 
 ``` purescript
-newListTagsResponse' :: ({ "Tags" :: NullOrUndefined (TagList), "NextToken" :: NullOrUndefined (String) } -> { "Tags" :: NullOrUndefined (TagList), "NextToken" :: NullOrUndefined (String) }) -> ListTagsResponse
+newListTagsResponse' :: ({ "Tags" :: Maybe (TagList), "NextToken" :: Maybe (String) } -> { "Tags" :: Maybe (TagList), "NextToken" :: Maybe (String) }) -> ListTagsResponse
 ```
 
 Constructs ListTagsResponse's fields from required parameters
@@ -1446,7 +1446,7 @@ Constructs ListTagsResponse's fields from required parameters
 
 ``` purescript
 newtype Node
-  = Node { "NodeId" :: NullOrUndefined (String), "Endpoint" :: NullOrUndefined (Endpoint), "NodeCreateTime" :: NullOrUndefined (TStamp), "AvailabilityZone" :: NullOrUndefined (String), "NodeStatus" :: NullOrUndefined (String), "ParameterGroupStatus" :: NullOrUndefined (String) }
+  = Node { "NodeId" :: Maybe (String), "Endpoint" :: Maybe (Endpoint), "NodeCreateTime" :: Maybe (TStamp), "AvailabilityZone" :: Maybe (String), "NodeStatus" :: Maybe (String), "ParameterGroupStatus" :: Maybe (String) }
 ```
 
 <p>Represents an individual node within a DAX cluster.</p>
@@ -1471,7 +1471,7 @@ Constructs Node from required parameters
 #### `newNode'`
 
 ``` purescript
-newNode' :: ({ "NodeId" :: NullOrUndefined (String), "Endpoint" :: NullOrUndefined (Endpoint), "NodeCreateTime" :: NullOrUndefined (TStamp), "AvailabilityZone" :: NullOrUndefined (String), "NodeStatus" :: NullOrUndefined (String), "ParameterGroupStatus" :: NullOrUndefined (String) } -> { "NodeId" :: NullOrUndefined (String), "Endpoint" :: NullOrUndefined (Endpoint), "NodeCreateTime" :: NullOrUndefined (TStamp), "AvailabilityZone" :: NullOrUndefined (String), "NodeStatus" :: NullOrUndefined (String), "ParameterGroupStatus" :: NullOrUndefined (String) }) -> Node
+newNode' :: ({ "NodeId" :: Maybe (String), "Endpoint" :: Maybe (Endpoint), "NodeCreateTime" :: Maybe (TStamp), "AvailabilityZone" :: Maybe (String), "NodeStatus" :: Maybe (String), "ParameterGroupStatus" :: Maybe (String) } -> { "NodeId" :: Maybe (String), "Endpoint" :: Maybe (Endpoint), "NodeCreateTime" :: Maybe (TStamp), "AvailabilityZone" :: Maybe (String), "NodeStatus" :: Maybe (String), "ParameterGroupStatus" :: Maybe (String) }) -> Node
 ```
 
 Constructs Node's fields from required parameters
@@ -1566,7 +1566,7 @@ Encode NodeQuotaForCustomerExceededFault
 
 ``` purescript
 newtype NodeTypeSpecificValue
-  = NodeTypeSpecificValue { "NodeType" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = NodeTypeSpecificValue { "NodeType" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>Represents a parameter value that is applicable to a particular node type.</p>
@@ -1591,7 +1591,7 @@ Constructs NodeTypeSpecificValue from required parameters
 #### `newNodeTypeSpecificValue'`
 
 ``` purescript
-newNodeTypeSpecificValue' :: ({ "NodeType" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "NodeType" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> NodeTypeSpecificValue
+newNodeTypeSpecificValue' :: ({ "NodeType" :: Maybe (String), "Value" :: Maybe (String) } -> { "NodeType" :: Maybe (String), "Value" :: Maybe (String) }) -> NodeTypeSpecificValue
 ```
 
 Constructs NodeTypeSpecificValue's fields from required parameters
@@ -1616,7 +1616,7 @@ Encode NodeTypeSpecificValueList
 
 ``` purescript
 newtype NotificationConfiguration
-  = NotificationConfiguration { "TopicArn" :: NullOrUndefined (String), "TopicStatus" :: NullOrUndefined (String) }
+  = NotificationConfiguration { "TopicArn" :: Maybe (String), "TopicStatus" :: Maybe (String) }
 ```
 
 <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
@@ -1641,7 +1641,7 @@ Constructs NotificationConfiguration from required parameters
 #### `newNotificationConfiguration'`
 
 ``` purescript
-newNotificationConfiguration' :: ({ "TopicArn" :: NullOrUndefined (String), "TopicStatus" :: NullOrUndefined (String) } -> { "TopicArn" :: NullOrUndefined (String), "TopicStatus" :: NullOrUndefined (String) }) -> NotificationConfiguration
+newNotificationConfiguration' :: ({ "TopicArn" :: Maybe (String), "TopicStatus" :: Maybe (String) } -> { "TopicArn" :: Maybe (String), "TopicStatus" :: Maybe (String) }) -> NotificationConfiguration
 ```
 
 Constructs NotificationConfiguration's fields from required parameters
@@ -1650,7 +1650,7 @@ Constructs NotificationConfiguration's fields from required parameters
 
 ``` purescript
 newtype Parameter
-  = Parameter { "ParameterName" :: NullOrUndefined (String), "ParameterType" :: NullOrUndefined (ParameterType), "ParameterValue" :: NullOrUndefined (String), "NodeTypeSpecificValues" :: NullOrUndefined (NodeTypeSpecificValueList), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (IsModifiable), "ChangeType" :: NullOrUndefined (ChangeType) }
+  = Parameter { "ParameterName" :: Maybe (String), "ParameterType" :: Maybe (ParameterType), "ParameterValue" :: Maybe (String), "NodeTypeSpecificValues" :: Maybe (NodeTypeSpecificValueList), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (IsModifiable), "ChangeType" :: Maybe (ChangeType) }
 ```
 
 <p>Describes an individual setting that controls some aspect of DAX behavior.</p>
@@ -1675,7 +1675,7 @@ Constructs Parameter from required parameters
 #### `newParameter'`
 
 ``` purescript
-newParameter' :: ({ "ParameterName" :: NullOrUndefined (String), "ParameterType" :: NullOrUndefined (ParameterType), "ParameterValue" :: NullOrUndefined (String), "NodeTypeSpecificValues" :: NullOrUndefined (NodeTypeSpecificValueList), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (IsModifiable), "ChangeType" :: NullOrUndefined (ChangeType) } -> { "ParameterName" :: NullOrUndefined (String), "ParameterType" :: NullOrUndefined (ParameterType), "ParameterValue" :: NullOrUndefined (String), "NodeTypeSpecificValues" :: NullOrUndefined (NodeTypeSpecificValueList), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "IsModifiable" :: NullOrUndefined (IsModifiable), "ChangeType" :: NullOrUndefined (ChangeType) }) -> Parameter
+newParameter' :: ({ "ParameterName" :: Maybe (String), "ParameterType" :: Maybe (ParameterType), "ParameterValue" :: Maybe (String), "NodeTypeSpecificValues" :: Maybe (NodeTypeSpecificValueList), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (IsModifiable), "ChangeType" :: Maybe (ChangeType) } -> { "ParameterName" :: Maybe (String), "ParameterType" :: Maybe (ParameterType), "ParameterValue" :: Maybe (String), "NodeTypeSpecificValues" :: Maybe (NodeTypeSpecificValueList), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "IsModifiable" :: Maybe (IsModifiable), "ChangeType" :: Maybe (ChangeType) }) -> Parameter
 ```
 
 Constructs Parameter's fields from required parameters
@@ -1684,7 +1684,7 @@ Constructs Parameter's fields from required parameters
 
 ``` purescript
 newtype ParameterGroup
-  = ParameterGroup { "ParameterGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = ParameterGroup { "ParameterGroupName" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
@@ -1709,7 +1709,7 @@ Constructs ParameterGroup from required parameters
 #### `newParameterGroup'`
 
 ``` purescript
-newParameterGroup' :: ({ "ParameterGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "ParameterGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> ParameterGroup
+newParameterGroup' :: ({ "ParameterGroupName" :: Maybe (String), "Description" :: Maybe (String) } -> { "ParameterGroupName" :: Maybe (String), "Description" :: Maybe (String) }) -> ParameterGroup
 ```
 
 Constructs ParameterGroup's fields from required parameters
@@ -1804,7 +1804,7 @@ Encode ParameterGroupQuotaExceededFault
 
 ``` purescript
 newtype ParameterGroupStatus
-  = ParameterGroupStatus { "ParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "NodeIdsToReboot" :: NullOrUndefined (NodeIdentifierList) }
+  = ParameterGroupStatus { "ParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "NodeIdsToReboot" :: Maybe (NodeIdentifierList) }
 ```
 
 <p>The status of a parameter group.</p>
@@ -1829,7 +1829,7 @@ Constructs ParameterGroupStatus from required parameters
 #### `newParameterGroupStatus'`
 
 ``` purescript
-newParameterGroupStatus' :: ({ "ParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "NodeIdsToReboot" :: NullOrUndefined (NodeIdentifierList) } -> { "ParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "NodeIdsToReboot" :: NullOrUndefined (NodeIdentifierList) }) -> ParameterGroupStatus
+newParameterGroupStatus' :: ({ "ParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "NodeIdsToReboot" :: Maybe (NodeIdentifierList) } -> { "ParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "NodeIdsToReboot" :: Maybe (NodeIdentifierList) }) -> ParameterGroupStatus
 ```
 
 Constructs ParameterGroupStatus's fields from required parameters
@@ -1854,7 +1854,7 @@ Encode ParameterList
 
 ``` purescript
 newtype ParameterNameValue
-  = ParameterNameValue { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String) }
+  = ParameterNameValue { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String) }
 ```
 
 <p>An individual DAX parameter.</p>
@@ -1879,7 +1879,7 @@ Constructs ParameterNameValue from required parameters
 #### `newParameterNameValue'`
 
 ``` purescript
-newParameterNameValue' :: ({ "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String) } -> { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String) }) -> ParameterNameValue
+newParameterNameValue' :: ({ "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String) } -> { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String) }) -> ParameterNameValue
 ```
 
 Constructs ParameterNameValue's fields from required parameters
@@ -1952,7 +1952,7 @@ Constructs RebootNodeRequest's fields from required parameters
 
 ``` purescript
 newtype RebootNodeResponse
-  = RebootNodeResponse { "Cluster" :: NullOrUndefined (Cluster) }
+  = RebootNodeResponse { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -1975,7 +1975,7 @@ Constructs RebootNodeResponse from required parameters
 #### `newRebootNodeResponse'`
 
 ``` purescript
-newRebootNodeResponse' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> RebootNodeResponse
+newRebootNodeResponse' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> RebootNodeResponse
 ```
 
 Constructs RebootNodeResponse's fields from required parameters
@@ -2000,7 +2000,7 @@ Encode SecurityGroupIdentifierList
 
 ``` purescript
 newtype SecurityGroupMembership
-  = SecurityGroupMembership { "SecurityGroupIdentifier" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = SecurityGroupMembership { "SecurityGroupIdentifier" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>An individual VPC security group and its status.</p>
@@ -2025,7 +2025,7 @@ Constructs SecurityGroupMembership from required parameters
 #### `newSecurityGroupMembership'`
 
 ``` purescript
-newSecurityGroupMembership' :: ({ "SecurityGroupIdentifier" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "SecurityGroupIdentifier" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> SecurityGroupMembership
+newSecurityGroupMembership' :: ({ "SecurityGroupIdentifier" :: Maybe (String), "Status" :: Maybe (String) } -> { "SecurityGroupIdentifier" :: Maybe (String), "Status" :: Maybe (String) }) -> SecurityGroupMembership
 ```
 
 Constructs SecurityGroupMembership's fields from required parameters
@@ -2066,7 +2066,7 @@ Encode SourceType
 
 ``` purescript
 newtype Subnet
-  = Subnet { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (String) }
+  = Subnet { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (String) }
 ```
 
 <p>Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.</p>
@@ -2091,7 +2091,7 @@ Constructs Subnet from required parameters
 #### `newSubnet'`
 
 ``` purescript
-newSubnet' :: ({ "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (String) } -> { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (String) }) -> Subnet
+newSubnet' :: ({ "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (String) } -> { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (String) }) -> Subnet
 ```
 
 Constructs Subnet's fields from required parameters
@@ -2100,7 +2100,7 @@ Constructs Subnet's fields from required parameters
 
 ``` purescript
 newtype SubnetGroup
-  = SubnetGroup { "SubnetGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) }
+  = SubnetGroup { "SubnetGroupName" :: Maybe (String), "Description" :: Maybe (String), "VpcId" :: Maybe (String), "Subnets" :: Maybe (SubnetList) }
 ```
 
 <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul>
@@ -2125,7 +2125,7 @@ Constructs SubnetGroup from required parameters
 #### `newSubnetGroup'`
 
 ``` purescript
-newSubnetGroup' :: ({ "SubnetGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) } -> { "SubnetGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) }) -> SubnetGroup
+newSubnetGroup' :: ({ "SubnetGroupName" :: Maybe (String), "Description" :: Maybe (String), "VpcId" :: Maybe (String), "Subnets" :: Maybe (SubnetList) } -> { "SubnetGroupName" :: Maybe (String), "Description" :: Maybe (String), "VpcId" :: Maybe (String), "Subnets" :: Maybe (SubnetList) }) -> SubnetGroup
 ```
 
 Constructs SubnetGroup's fields from required parameters
@@ -2322,7 +2322,7 @@ Encode TStamp
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = Tag { "Key" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.</p> <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p> <p>You cannot backdate the application of a tag.</p>
@@ -2347,7 +2347,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (String), "Value" :: Maybe (String) } -> { "Key" :: Maybe (String), "Value" :: Maybe (String) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -2440,7 +2440,7 @@ Constructs TagResourceRequest's fields from required parameters
 
 ``` purescript
 newtype TagResourceResponse
-  = TagResourceResponse { "Tags" :: NullOrUndefined (TagList) }
+  = TagResourceResponse { "Tags" :: Maybe (TagList) }
 ```
 
 ##### Instances
@@ -2463,7 +2463,7 @@ Constructs TagResourceResponse from required parameters
 #### `newTagResourceResponse'`
 
 ``` purescript
-newTagResourceResponse' :: ({ "Tags" :: NullOrUndefined (TagList) } -> { "Tags" :: NullOrUndefined (TagList) }) -> TagResourceResponse
+newTagResourceResponse' :: ({ "Tags" :: Maybe (TagList) } -> { "Tags" :: Maybe (TagList) }) -> TagResourceResponse
 ```
 
 Constructs TagResourceResponse's fields from required parameters
@@ -2504,7 +2504,7 @@ Constructs UntagResourceRequest's fields from required parameters
 
 ``` purescript
 newtype UntagResourceResponse
-  = UntagResourceResponse { "Tags" :: NullOrUndefined (TagList) }
+  = UntagResourceResponse { "Tags" :: Maybe (TagList) }
 ```
 
 ##### Instances
@@ -2527,7 +2527,7 @@ Constructs UntagResourceResponse from required parameters
 #### `newUntagResourceResponse'`
 
 ``` purescript
-newUntagResourceResponse' :: ({ "Tags" :: NullOrUndefined (TagList) } -> { "Tags" :: NullOrUndefined (TagList) }) -> UntagResourceResponse
+newUntagResourceResponse' :: ({ "Tags" :: Maybe (TagList) } -> { "Tags" :: Maybe (TagList) }) -> UntagResourceResponse
 ```
 
 Constructs UntagResourceResponse's fields from required parameters
@@ -2536,7 +2536,7 @@ Constructs UntagResourceResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateClusterRequest
-  = UpdateClusterRequest { "ClusterName" :: String, "Description" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ParameterGroupName" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) }
+  = UpdateClusterRequest { "ClusterName" :: String, "Description" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ParameterGroupName" :: Maybe (String), "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) }
 ```
 
 ##### Instances
@@ -2559,7 +2559,7 @@ Constructs UpdateClusterRequest from required parameters
 #### `newUpdateClusterRequest'`
 
 ``` purescript
-newUpdateClusterRequest' :: String -> ({ "ClusterName" :: String, "Description" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ParameterGroupName" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) } -> { "ClusterName" :: String, "Description" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "NotificationTopicArn" :: NullOrUndefined (String), "NotificationTopicStatus" :: NullOrUndefined (String), "ParameterGroupName" :: NullOrUndefined (String), "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) }) -> UpdateClusterRequest
+newUpdateClusterRequest' :: String -> ({ "ClusterName" :: String, "Description" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ParameterGroupName" :: Maybe (String), "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) } -> { "ClusterName" :: String, "Description" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "NotificationTopicArn" :: Maybe (String), "NotificationTopicStatus" :: Maybe (String), "ParameterGroupName" :: Maybe (String), "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) }) -> UpdateClusterRequest
 ```
 
 Constructs UpdateClusterRequest's fields from required parameters
@@ -2568,7 +2568,7 @@ Constructs UpdateClusterRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateClusterResponse
-  = UpdateClusterResponse { "Cluster" :: NullOrUndefined (Cluster) }
+  = UpdateClusterResponse { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -2591,7 +2591,7 @@ Constructs UpdateClusterResponse from required parameters
 #### `newUpdateClusterResponse'`
 
 ``` purescript
-newUpdateClusterResponse' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> UpdateClusterResponse
+newUpdateClusterResponse' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> UpdateClusterResponse
 ```
 
 Constructs UpdateClusterResponse's fields from required parameters
@@ -2632,7 +2632,7 @@ Constructs UpdateParameterGroupRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateParameterGroupResponse
-  = UpdateParameterGroupResponse { "ParameterGroup" :: NullOrUndefined (ParameterGroup) }
+  = UpdateParameterGroupResponse { "ParameterGroup" :: Maybe (ParameterGroup) }
 ```
 
 ##### Instances
@@ -2655,7 +2655,7 @@ Constructs UpdateParameterGroupResponse from required parameters
 #### `newUpdateParameterGroupResponse'`
 
 ``` purescript
-newUpdateParameterGroupResponse' :: ({ "ParameterGroup" :: NullOrUndefined (ParameterGroup) } -> { "ParameterGroup" :: NullOrUndefined (ParameterGroup) }) -> UpdateParameterGroupResponse
+newUpdateParameterGroupResponse' :: ({ "ParameterGroup" :: Maybe (ParameterGroup) } -> { "ParameterGroup" :: Maybe (ParameterGroup) }) -> UpdateParameterGroupResponse
 ```
 
 Constructs UpdateParameterGroupResponse's fields from required parameters
@@ -2664,7 +2664,7 @@ Constructs UpdateParameterGroupResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateSubnetGroupRequest
-  = UpdateSubnetGroupRequest { "SubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) }
+  = UpdateSubnetGroupRequest { "SubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: Maybe (SubnetIdentifierList) }
 ```
 
 ##### Instances
@@ -2687,7 +2687,7 @@ Constructs UpdateSubnetGroupRequest from required parameters
 #### `newUpdateSubnetGroupRequest'`
 
 ``` purescript
-newUpdateSubnetGroupRequest' :: String -> ({ "SubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) } -> { "SubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) }) -> UpdateSubnetGroupRequest
+newUpdateSubnetGroupRequest' :: String -> ({ "SubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: Maybe (SubnetIdentifierList) } -> { "SubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: Maybe (SubnetIdentifierList) }) -> UpdateSubnetGroupRequest
 ```
 
 Constructs UpdateSubnetGroupRequest's fields from required parameters
@@ -2696,7 +2696,7 @@ Constructs UpdateSubnetGroupRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateSubnetGroupResponse
-  = UpdateSubnetGroupResponse { "SubnetGroup" :: NullOrUndefined (SubnetGroup) }
+  = UpdateSubnetGroupResponse { "SubnetGroup" :: Maybe (SubnetGroup) }
 ```
 
 ##### Instances
@@ -2719,7 +2719,7 @@ Constructs UpdateSubnetGroupResponse from required parameters
 #### `newUpdateSubnetGroupResponse'`
 
 ``` purescript
-newUpdateSubnetGroupResponse' :: ({ "SubnetGroup" :: NullOrUndefined (SubnetGroup) } -> { "SubnetGroup" :: NullOrUndefined (SubnetGroup) }) -> UpdateSubnetGroupResponse
+newUpdateSubnetGroupResponse' :: ({ "SubnetGroup" :: Maybe (SubnetGroup) } -> { "SubnetGroup" :: Maybe (SubnetGroup) }) -> UpdateSubnetGroupResponse
 ```
 
 Constructs UpdateSubnetGroupResponse's fields from required parameters

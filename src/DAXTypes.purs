@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -47,22 +46,22 @@ instance encodeChangeType :: Encode ChangeType where encode = genericEncode opti
 
 -- | <p>Contains all of the attributes of a specific DAX cluster.</p>
 newtype Cluster = Cluster 
-  { "ClusterName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "ClusterArn" :: NullOrUndefined (String)
-  , "TotalNodes" :: NullOrUndefined (IntegerOptional)
-  , "ActiveNodes" :: NullOrUndefined (IntegerOptional)
-  , "NodeType" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "ClusterDiscoveryEndpoint" :: NullOrUndefined (Endpoint)
-  , "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList)
-  , "Nodes" :: NullOrUndefined (NodeList)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration)
-  , "SubnetGroup" :: NullOrUndefined (String)
-  , "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList)
-  , "IamRoleArn" :: NullOrUndefined (String)
-  , "ParameterGroup" :: NullOrUndefined (ParameterGroupStatus)
+  { "ClusterName" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "ClusterArn" :: Maybe (String)
+  , "TotalNodes" :: Maybe (IntegerOptional)
+  , "ActiveNodes" :: Maybe (IntegerOptional)
+  , "NodeType" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "ClusterDiscoveryEndpoint" :: Maybe (Endpoint)
+  , "NodeIdsToRemove" :: Maybe (NodeIdentifierList)
+  , "Nodes" :: Maybe (NodeList)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "NotificationConfiguration" :: Maybe (NotificationConfiguration)
+  , "SubnetGroup" :: Maybe (String)
+  , "SecurityGroups" :: Maybe (SecurityGroupMembershipList)
+  , "IamRoleArn" :: Maybe (String)
+  , "ParameterGroup" :: Maybe (ParameterGroupStatus)
   }
 derive instance newtypeCluster :: Newtype Cluster _
 derive instance repGenericCluster :: Generic Cluster _
@@ -72,12 +71,12 @@ instance encodeCluster :: Encode Cluster where encode = genericEncode options
 
 -- | Constructs Cluster from required parameters
 newCluster :: Cluster
-newCluster  = Cluster { "ActiveNodes": (NullOrUndefined Nothing), "ClusterArn": (NullOrUndefined Nothing), "ClusterDiscoveryEndpoint": (NullOrUndefined Nothing), "ClusterName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing), "NodeIdsToRemove": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "Nodes": (NullOrUndefined Nothing), "NotificationConfiguration": (NullOrUndefined Nothing), "ParameterGroup": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetGroup": (NullOrUndefined Nothing), "TotalNodes": (NullOrUndefined Nothing) }
+newCluster  = Cluster { "ActiveNodes": Nothing, "ClusterArn": Nothing, "ClusterDiscoveryEndpoint": Nothing, "ClusterName": Nothing, "Description": Nothing, "IamRoleArn": Nothing, "NodeIdsToRemove": Nothing, "NodeType": Nothing, "Nodes": Nothing, "NotificationConfiguration": Nothing, "ParameterGroup": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroups": Nothing, "Status": Nothing, "SubnetGroup": Nothing, "TotalNodes": Nothing }
 
 -- | Constructs Cluster's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCluster' :: ( { "ClusterName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "ClusterArn" :: NullOrUndefined (String) , "TotalNodes" :: NullOrUndefined (IntegerOptional) , "ActiveNodes" :: NullOrUndefined (IntegerOptional) , "NodeType" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "ClusterDiscoveryEndpoint" :: NullOrUndefined (Endpoint) , "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) , "Nodes" :: NullOrUndefined (NodeList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration) , "SubnetGroup" :: NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList) , "IamRoleArn" :: NullOrUndefined (String) , "ParameterGroup" :: NullOrUndefined (ParameterGroupStatus) } -> {"ClusterName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "ClusterArn" :: NullOrUndefined (String) , "TotalNodes" :: NullOrUndefined (IntegerOptional) , "ActiveNodes" :: NullOrUndefined (IntegerOptional) , "NodeType" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "ClusterDiscoveryEndpoint" :: NullOrUndefined (Endpoint) , "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) , "Nodes" :: NullOrUndefined (NodeList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationConfiguration" :: NullOrUndefined (NotificationConfiguration) , "SubnetGroup" :: NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined (SecurityGroupMembershipList) , "IamRoleArn" :: NullOrUndefined (String) , "ParameterGroup" :: NullOrUndefined (ParameterGroupStatus) } ) -> Cluster
-newCluster'  customize = (Cluster <<< customize) { "ActiveNodes": (NullOrUndefined Nothing), "ClusterArn": (NullOrUndefined Nothing), "ClusterDiscoveryEndpoint": (NullOrUndefined Nothing), "ClusterName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing), "NodeIdsToRemove": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "Nodes": (NullOrUndefined Nothing), "NotificationConfiguration": (NullOrUndefined Nothing), "ParameterGroup": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetGroup": (NullOrUndefined Nothing), "TotalNodes": (NullOrUndefined Nothing) }
+newCluster' :: ( { "ClusterName" :: Maybe (String) , "Description" :: Maybe (String) , "ClusterArn" :: Maybe (String) , "TotalNodes" :: Maybe (IntegerOptional) , "ActiveNodes" :: Maybe (IntegerOptional) , "NodeType" :: Maybe (String) , "Status" :: Maybe (String) , "ClusterDiscoveryEndpoint" :: Maybe (Endpoint) , "NodeIdsToRemove" :: Maybe (NodeIdentifierList) , "Nodes" :: Maybe (NodeList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationConfiguration" :: Maybe (NotificationConfiguration) , "SubnetGroup" :: Maybe (String) , "SecurityGroups" :: Maybe (SecurityGroupMembershipList) , "IamRoleArn" :: Maybe (String) , "ParameterGroup" :: Maybe (ParameterGroupStatus) } -> {"ClusterName" :: Maybe (String) , "Description" :: Maybe (String) , "ClusterArn" :: Maybe (String) , "TotalNodes" :: Maybe (IntegerOptional) , "ActiveNodes" :: Maybe (IntegerOptional) , "NodeType" :: Maybe (String) , "Status" :: Maybe (String) , "ClusterDiscoveryEndpoint" :: Maybe (Endpoint) , "NodeIdsToRemove" :: Maybe (NodeIdentifierList) , "Nodes" :: Maybe (NodeList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationConfiguration" :: Maybe (NotificationConfiguration) , "SubnetGroup" :: Maybe (String) , "SecurityGroups" :: Maybe (SecurityGroupMembershipList) , "IamRoleArn" :: Maybe (String) , "ParameterGroup" :: Maybe (ParameterGroupStatus) } ) -> Cluster
+newCluster'  customize = (Cluster <<< customize) { "ActiveNodes": Nothing, "ClusterArn": Nothing, "ClusterDiscoveryEndpoint": Nothing, "ClusterName": Nothing, "Description": Nothing, "IamRoleArn": Nothing, "NodeIdsToRemove": Nothing, "NodeType": Nothing, "Nodes": Nothing, "NotificationConfiguration": Nothing, "ParameterGroup": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroups": Nothing, "Status": Nothing, "SubnetGroup": Nothing, "TotalNodes": Nothing }
 
 
 
@@ -132,16 +131,16 @@ instance encodeClusterQuotaForCustomerExceededFault :: Encode ClusterQuotaForCus
 newtype CreateClusterRequest = CreateClusterRequest 
   { "ClusterName" :: (String)
   , "NodeType" :: (String)
-  , "Description" :: NullOrUndefined (String)
+  , "Description" :: Maybe (String)
   , "ReplicationFactor" :: (Int)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList)
-  , "SubnetGroupName" :: NullOrUndefined (String)
-  , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "NotificationTopicArn" :: NullOrUndefined (String)
+  , "AvailabilityZones" :: Maybe (AvailabilityZoneList)
+  , "SubnetGroupName" :: Maybe (String)
+  , "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "NotificationTopicArn" :: Maybe (String)
   , "IamRoleArn" :: (String)
-  , "ParameterGroupName" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "ParameterGroupName" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateClusterRequest :: Newtype CreateClusterRequest _
 derive instance repGenericCreateClusterRequest :: Generic CreateClusterRequest _
@@ -151,17 +150,17 @@ instance encodeCreateClusterRequest :: Encode CreateClusterRequest where encode 
 
 -- | Constructs CreateClusterRequest from required parameters
 newCreateClusterRequest :: String -> String -> String -> Int -> CreateClusterRequest
-newCreateClusterRequest _ClusterName _IamRoleArn _NodeType _ReplicationFactor = CreateClusterRequest { "ClusterName": _ClusterName, "IamRoleArn": _IamRoleArn, "NodeType": _NodeType, "ReplicationFactor": _ReplicationFactor, "AvailabilityZones": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetGroupName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateClusterRequest _ClusterName _IamRoleArn _NodeType _ReplicationFactor = CreateClusterRequest { "ClusterName": _ClusterName, "IamRoleArn": _IamRoleArn, "NodeType": _NodeType, "ReplicationFactor": _ReplicationFactor, "AvailabilityZones": Nothing, "Description": Nothing, "NotificationTopicArn": Nothing, "ParameterGroupName": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroupIds": Nothing, "SubnetGroupName": Nothing, "Tags": Nothing }
 
 -- | Constructs CreateClusterRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterRequest' :: String -> String -> String -> Int -> ( { "ClusterName" :: (String) , "NodeType" :: (String) , "Description" :: NullOrUndefined (String) , "ReplicationFactor" :: (Int) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) , "SubnetGroupName" :: NullOrUndefined (String) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "IamRoleArn" :: (String) , "ParameterGroupName" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"ClusterName" :: (String) , "NodeType" :: (String) , "Description" :: NullOrUndefined (String) , "ReplicationFactor" :: (Int) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) , "SubnetGroupName" :: NullOrUndefined (String) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "IamRoleArn" :: (String) , "ParameterGroupName" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateClusterRequest
-newCreateClusterRequest' _ClusterName _IamRoleArn _NodeType _ReplicationFactor customize = (CreateClusterRequest <<< customize) { "ClusterName": _ClusterName, "IamRoleArn": _IamRoleArn, "NodeType": _NodeType, "ReplicationFactor": _ReplicationFactor, "AvailabilityZones": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetGroupName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateClusterRequest' :: String -> String -> String -> Int -> ( { "ClusterName" :: (String) , "NodeType" :: (String) , "Description" :: Maybe (String) , "ReplicationFactor" :: (Int) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) , "SubnetGroupName" :: Maybe (String) , "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "IamRoleArn" :: (String) , "ParameterGroupName" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"ClusterName" :: (String) , "NodeType" :: (String) , "Description" :: Maybe (String) , "ReplicationFactor" :: (Int) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) , "SubnetGroupName" :: Maybe (String) , "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "IamRoleArn" :: (String) , "ParameterGroupName" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> CreateClusterRequest
+newCreateClusterRequest' _ClusterName _IamRoleArn _NodeType _ReplicationFactor customize = (CreateClusterRequest <<< customize) { "ClusterName": _ClusterName, "IamRoleArn": _IamRoleArn, "NodeType": _NodeType, "ReplicationFactor": _ReplicationFactor, "AvailabilityZones": Nothing, "Description": Nothing, "NotificationTopicArn": Nothing, "ParameterGroupName": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroupIds": Nothing, "SubnetGroupName": Nothing, "Tags": Nothing }
 
 
 
 newtype CreateClusterResponse = CreateClusterResponse 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeCreateClusterResponse :: Newtype CreateClusterResponse _
 derive instance repGenericCreateClusterResponse :: Generic CreateClusterResponse _
@@ -171,18 +170,18 @@ instance encodeCreateClusterResponse :: Encode CreateClusterResponse where encod
 
 -- | Constructs CreateClusterResponse from required parameters
 newCreateClusterResponse :: CreateClusterResponse
-newCreateClusterResponse  = CreateClusterResponse { "Cluster": (NullOrUndefined Nothing) }
+newCreateClusterResponse  = CreateClusterResponse { "Cluster": Nothing }
 
 -- | Constructs CreateClusterResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterResponse' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> CreateClusterResponse
-newCreateClusterResponse'  customize = (CreateClusterResponse <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newCreateClusterResponse' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> CreateClusterResponse
+newCreateClusterResponse'  customize = (CreateClusterResponse <<< customize) { "Cluster": Nothing }
 
 
 
 newtype CreateParameterGroupRequest = CreateParameterGroupRequest 
   { "ParameterGroupName" :: (String)
-  , "Description" :: NullOrUndefined (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeCreateParameterGroupRequest :: Newtype CreateParameterGroupRequest _
 derive instance repGenericCreateParameterGroupRequest :: Generic CreateParameterGroupRequest _
@@ -192,17 +191,17 @@ instance encodeCreateParameterGroupRequest :: Encode CreateParameterGroupRequest
 
 -- | Constructs CreateParameterGroupRequest from required parameters
 newCreateParameterGroupRequest :: String -> CreateParameterGroupRequest
-newCreateParameterGroupRequest _ParameterGroupName = CreateParameterGroupRequest { "ParameterGroupName": _ParameterGroupName, "Description": (NullOrUndefined Nothing) }
+newCreateParameterGroupRequest _ParameterGroupName = CreateParameterGroupRequest { "ParameterGroupName": _ParameterGroupName, "Description": Nothing }
 
 -- | Constructs CreateParameterGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateParameterGroupRequest' :: String -> ( { "ParameterGroupName" :: (String) , "Description" :: NullOrUndefined (String) } -> {"ParameterGroupName" :: (String) , "Description" :: NullOrUndefined (String) } ) -> CreateParameterGroupRequest
-newCreateParameterGroupRequest' _ParameterGroupName customize = (CreateParameterGroupRequest <<< customize) { "ParameterGroupName": _ParameterGroupName, "Description": (NullOrUndefined Nothing) }
+newCreateParameterGroupRequest' :: String -> ( { "ParameterGroupName" :: (String) , "Description" :: Maybe (String) } -> {"ParameterGroupName" :: (String) , "Description" :: Maybe (String) } ) -> CreateParameterGroupRequest
+newCreateParameterGroupRequest' _ParameterGroupName customize = (CreateParameterGroupRequest <<< customize) { "ParameterGroupName": _ParameterGroupName, "Description": Nothing }
 
 
 
 newtype CreateParameterGroupResponse = CreateParameterGroupResponse 
-  { "ParameterGroup" :: NullOrUndefined (ParameterGroup)
+  { "ParameterGroup" :: Maybe (ParameterGroup)
   }
 derive instance newtypeCreateParameterGroupResponse :: Newtype CreateParameterGroupResponse _
 derive instance repGenericCreateParameterGroupResponse :: Generic CreateParameterGroupResponse _
@@ -212,18 +211,18 @@ instance encodeCreateParameterGroupResponse :: Encode CreateParameterGroupRespon
 
 -- | Constructs CreateParameterGroupResponse from required parameters
 newCreateParameterGroupResponse :: CreateParameterGroupResponse
-newCreateParameterGroupResponse  = CreateParameterGroupResponse { "ParameterGroup": (NullOrUndefined Nothing) }
+newCreateParameterGroupResponse  = CreateParameterGroupResponse { "ParameterGroup": Nothing }
 
 -- | Constructs CreateParameterGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateParameterGroupResponse' :: ( { "ParameterGroup" :: NullOrUndefined (ParameterGroup) } -> {"ParameterGroup" :: NullOrUndefined (ParameterGroup) } ) -> CreateParameterGroupResponse
-newCreateParameterGroupResponse'  customize = (CreateParameterGroupResponse <<< customize) { "ParameterGroup": (NullOrUndefined Nothing) }
+newCreateParameterGroupResponse' :: ( { "ParameterGroup" :: Maybe (ParameterGroup) } -> {"ParameterGroup" :: Maybe (ParameterGroup) } ) -> CreateParameterGroupResponse
+newCreateParameterGroupResponse'  customize = (CreateParameterGroupResponse <<< customize) { "ParameterGroup": Nothing }
 
 
 
 newtype CreateSubnetGroupRequest = CreateSubnetGroupRequest 
   { "SubnetGroupName" :: (String)
-  , "Description" :: NullOrUndefined (String)
+  , "Description" :: Maybe (String)
   , "SubnetIds" :: (SubnetIdentifierList)
   }
 derive instance newtypeCreateSubnetGroupRequest :: Newtype CreateSubnetGroupRequest _
@@ -234,17 +233,17 @@ instance encodeCreateSubnetGroupRequest :: Encode CreateSubnetGroupRequest where
 
 -- | Constructs CreateSubnetGroupRequest from required parameters
 newCreateSubnetGroupRequest :: String -> SubnetIdentifierList -> CreateSubnetGroupRequest
-newCreateSubnetGroupRequest _SubnetGroupName _SubnetIds = CreateSubnetGroupRequest { "SubnetGroupName": _SubnetGroupName, "SubnetIds": _SubnetIds, "Description": (NullOrUndefined Nothing) }
+newCreateSubnetGroupRequest _SubnetGroupName _SubnetIds = CreateSubnetGroupRequest { "SubnetGroupName": _SubnetGroupName, "SubnetIds": _SubnetIds, "Description": Nothing }
 
 -- | Constructs CreateSubnetGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSubnetGroupRequest' :: String -> SubnetIdentifierList -> ( { "SubnetGroupName" :: (String) , "Description" :: NullOrUndefined (String) , "SubnetIds" :: (SubnetIdentifierList) } -> {"SubnetGroupName" :: (String) , "Description" :: NullOrUndefined (String) , "SubnetIds" :: (SubnetIdentifierList) } ) -> CreateSubnetGroupRequest
-newCreateSubnetGroupRequest' _SubnetGroupName _SubnetIds customize = (CreateSubnetGroupRequest <<< customize) { "SubnetGroupName": _SubnetGroupName, "SubnetIds": _SubnetIds, "Description": (NullOrUndefined Nothing) }
+newCreateSubnetGroupRequest' :: String -> SubnetIdentifierList -> ( { "SubnetGroupName" :: (String) , "Description" :: Maybe (String) , "SubnetIds" :: (SubnetIdentifierList) } -> {"SubnetGroupName" :: (String) , "Description" :: Maybe (String) , "SubnetIds" :: (SubnetIdentifierList) } ) -> CreateSubnetGroupRequest
+newCreateSubnetGroupRequest' _SubnetGroupName _SubnetIds customize = (CreateSubnetGroupRequest <<< customize) { "SubnetGroupName": _SubnetGroupName, "SubnetIds": _SubnetIds, "Description": Nothing }
 
 
 
 newtype CreateSubnetGroupResponse = CreateSubnetGroupResponse 
-  { "SubnetGroup" :: NullOrUndefined (SubnetGroup)
+  { "SubnetGroup" :: Maybe (SubnetGroup)
   }
 derive instance newtypeCreateSubnetGroupResponse :: Newtype CreateSubnetGroupResponse _
 derive instance repGenericCreateSubnetGroupResponse :: Generic CreateSubnetGroupResponse _
@@ -254,20 +253,20 @@ instance encodeCreateSubnetGroupResponse :: Encode CreateSubnetGroupResponse whe
 
 -- | Constructs CreateSubnetGroupResponse from required parameters
 newCreateSubnetGroupResponse :: CreateSubnetGroupResponse
-newCreateSubnetGroupResponse  = CreateSubnetGroupResponse { "SubnetGroup": (NullOrUndefined Nothing) }
+newCreateSubnetGroupResponse  = CreateSubnetGroupResponse { "SubnetGroup": Nothing }
 
 -- | Constructs CreateSubnetGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSubnetGroupResponse' :: ( { "SubnetGroup" :: NullOrUndefined (SubnetGroup) } -> {"SubnetGroup" :: NullOrUndefined (SubnetGroup) } ) -> CreateSubnetGroupResponse
-newCreateSubnetGroupResponse'  customize = (CreateSubnetGroupResponse <<< customize) { "SubnetGroup": (NullOrUndefined Nothing) }
+newCreateSubnetGroupResponse' :: ( { "SubnetGroup" :: Maybe (SubnetGroup) } -> {"SubnetGroup" :: Maybe (SubnetGroup) } ) -> CreateSubnetGroupResponse
+newCreateSubnetGroupResponse'  customize = (CreateSubnetGroupResponse <<< customize) { "SubnetGroup": Nothing }
 
 
 
 newtype DecreaseReplicationFactorRequest = DecreaseReplicationFactorRequest 
   { "ClusterName" :: (String)
   , "NewReplicationFactor" :: (Int)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList)
-  , "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList)
+  , "AvailabilityZones" :: Maybe (AvailabilityZoneList)
+  , "NodeIdsToRemove" :: Maybe (NodeIdentifierList)
   }
 derive instance newtypeDecreaseReplicationFactorRequest :: Newtype DecreaseReplicationFactorRequest _
 derive instance repGenericDecreaseReplicationFactorRequest :: Generic DecreaseReplicationFactorRequest _
@@ -277,17 +276,17 @@ instance encodeDecreaseReplicationFactorRequest :: Encode DecreaseReplicationFac
 
 -- | Constructs DecreaseReplicationFactorRequest from required parameters
 newDecreaseReplicationFactorRequest :: String -> Int -> DecreaseReplicationFactorRequest
-newDecreaseReplicationFactorRequest _ClusterName _NewReplicationFactor = DecreaseReplicationFactorRequest { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": (NullOrUndefined Nothing), "NodeIdsToRemove": (NullOrUndefined Nothing) }
+newDecreaseReplicationFactorRequest _ClusterName _NewReplicationFactor = DecreaseReplicationFactorRequest { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": Nothing, "NodeIdsToRemove": Nothing }
 
 -- | Constructs DecreaseReplicationFactorRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDecreaseReplicationFactorRequest' :: String -> Int -> ( { "ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) , "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) } -> {"ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) , "NodeIdsToRemove" :: NullOrUndefined (NodeIdentifierList) } ) -> DecreaseReplicationFactorRequest
-newDecreaseReplicationFactorRequest' _ClusterName _NewReplicationFactor customize = (DecreaseReplicationFactorRequest <<< customize) { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": (NullOrUndefined Nothing), "NodeIdsToRemove": (NullOrUndefined Nothing) }
+newDecreaseReplicationFactorRequest' :: String -> Int -> ( { "ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) , "NodeIdsToRemove" :: Maybe (NodeIdentifierList) } -> {"ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) , "NodeIdsToRemove" :: Maybe (NodeIdentifierList) } ) -> DecreaseReplicationFactorRequest
+newDecreaseReplicationFactorRequest' _ClusterName _NewReplicationFactor customize = (DecreaseReplicationFactorRequest <<< customize) { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": Nothing, "NodeIdsToRemove": Nothing }
 
 
 
 newtype DecreaseReplicationFactorResponse = DecreaseReplicationFactorResponse 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeDecreaseReplicationFactorResponse :: Newtype DecreaseReplicationFactorResponse _
 derive instance repGenericDecreaseReplicationFactorResponse :: Generic DecreaseReplicationFactorResponse _
@@ -297,12 +296,12 @@ instance encodeDecreaseReplicationFactorResponse :: Encode DecreaseReplicationFa
 
 -- | Constructs DecreaseReplicationFactorResponse from required parameters
 newDecreaseReplicationFactorResponse :: DecreaseReplicationFactorResponse
-newDecreaseReplicationFactorResponse  = DecreaseReplicationFactorResponse { "Cluster": (NullOrUndefined Nothing) }
+newDecreaseReplicationFactorResponse  = DecreaseReplicationFactorResponse { "Cluster": Nothing }
 
 -- | Constructs DecreaseReplicationFactorResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDecreaseReplicationFactorResponse' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> DecreaseReplicationFactorResponse
-newDecreaseReplicationFactorResponse'  customize = (DecreaseReplicationFactorResponse <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newDecreaseReplicationFactorResponse' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> DecreaseReplicationFactorResponse
+newDecreaseReplicationFactorResponse'  customize = (DecreaseReplicationFactorResponse <<< customize) { "Cluster": Nothing }
 
 
 
@@ -327,7 +326,7 @@ newDeleteClusterRequest' _ClusterName customize = (DeleteClusterRequest <<< cust
 
 
 newtype DeleteClusterResponse = DeleteClusterResponse 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeDeleteClusterResponse :: Newtype DeleteClusterResponse _
 derive instance repGenericDeleteClusterResponse :: Generic DeleteClusterResponse _
@@ -337,12 +336,12 @@ instance encodeDeleteClusterResponse :: Encode DeleteClusterResponse where encod
 
 -- | Constructs DeleteClusterResponse from required parameters
 newDeleteClusterResponse :: DeleteClusterResponse
-newDeleteClusterResponse  = DeleteClusterResponse { "Cluster": (NullOrUndefined Nothing) }
+newDeleteClusterResponse  = DeleteClusterResponse { "Cluster": Nothing }
 
 -- | Constructs DeleteClusterResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteClusterResponse' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> DeleteClusterResponse
-newDeleteClusterResponse'  customize = (DeleteClusterResponse <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newDeleteClusterResponse' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> DeleteClusterResponse
+newDeleteClusterResponse'  customize = (DeleteClusterResponse <<< customize) { "Cluster": Nothing }
 
 
 
@@ -367,7 +366,7 @@ newDeleteParameterGroupRequest' _ParameterGroupName customize = (DeleteParameter
 
 
 newtype DeleteParameterGroupResponse = DeleteParameterGroupResponse 
-  { "DeletionMessage" :: NullOrUndefined (String)
+  { "DeletionMessage" :: Maybe (String)
   }
 derive instance newtypeDeleteParameterGroupResponse :: Newtype DeleteParameterGroupResponse _
 derive instance repGenericDeleteParameterGroupResponse :: Generic DeleteParameterGroupResponse _
@@ -377,12 +376,12 @@ instance encodeDeleteParameterGroupResponse :: Encode DeleteParameterGroupRespon
 
 -- | Constructs DeleteParameterGroupResponse from required parameters
 newDeleteParameterGroupResponse :: DeleteParameterGroupResponse
-newDeleteParameterGroupResponse  = DeleteParameterGroupResponse { "DeletionMessage": (NullOrUndefined Nothing) }
+newDeleteParameterGroupResponse  = DeleteParameterGroupResponse { "DeletionMessage": Nothing }
 
 -- | Constructs DeleteParameterGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteParameterGroupResponse' :: ( { "DeletionMessage" :: NullOrUndefined (String) } -> {"DeletionMessage" :: NullOrUndefined (String) } ) -> DeleteParameterGroupResponse
-newDeleteParameterGroupResponse'  customize = (DeleteParameterGroupResponse <<< customize) { "DeletionMessage": (NullOrUndefined Nothing) }
+newDeleteParameterGroupResponse' :: ( { "DeletionMessage" :: Maybe (String) } -> {"DeletionMessage" :: Maybe (String) } ) -> DeleteParameterGroupResponse
+newDeleteParameterGroupResponse'  customize = (DeleteParameterGroupResponse <<< customize) { "DeletionMessage": Nothing }
 
 
 
@@ -407,7 +406,7 @@ newDeleteSubnetGroupRequest' _SubnetGroupName customize = (DeleteSubnetGroupRequ
 
 
 newtype DeleteSubnetGroupResponse = DeleteSubnetGroupResponse 
-  { "DeletionMessage" :: NullOrUndefined (String)
+  { "DeletionMessage" :: Maybe (String)
   }
 derive instance newtypeDeleteSubnetGroupResponse :: Newtype DeleteSubnetGroupResponse _
 derive instance repGenericDeleteSubnetGroupResponse :: Generic DeleteSubnetGroupResponse _
@@ -417,19 +416,19 @@ instance encodeDeleteSubnetGroupResponse :: Encode DeleteSubnetGroupResponse whe
 
 -- | Constructs DeleteSubnetGroupResponse from required parameters
 newDeleteSubnetGroupResponse :: DeleteSubnetGroupResponse
-newDeleteSubnetGroupResponse  = DeleteSubnetGroupResponse { "DeletionMessage": (NullOrUndefined Nothing) }
+newDeleteSubnetGroupResponse  = DeleteSubnetGroupResponse { "DeletionMessage": Nothing }
 
 -- | Constructs DeleteSubnetGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteSubnetGroupResponse' :: ( { "DeletionMessage" :: NullOrUndefined (String) } -> {"DeletionMessage" :: NullOrUndefined (String) } ) -> DeleteSubnetGroupResponse
-newDeleteSubnetGroupResponse'  customize = (DeleteSubnetGroupResponse <<< customize) { "DeletionMessage": (NullOrUndefined Nothing) }
+newDeleteSubnetGroupResponse' :: ( { "DeletionMessage" :: Maybe (String) } -> {"DeletionMessage" :: Maybe (String) } ) -> DeleteSubnetGroupResponse
+newDeleteSubnetGroupResponse'  customize = (DeleteSubnetGroupResponse <<< customize) { "DeletionMessage": Nothing }
 
 
 
 newtype DescribeClustersRequest = DescribeClustersRequest 
-  { "ClusterNames" :: NullOrUndefined (ClusterNameList)
-  , "MaxResults" :: NullOrUndefined (IntegerOptional)
-  , "NextToken" :: NullOrUndefined (String)
+  { "ClusterNames" :: Maybe (ClusterNameList)
+  , "MaxResults" :: Maybe (IntegerOptional)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeClustersRequest :: Newtype DescribeClustersRequest _
 derive instance repGenericDescribeClustersRequest :: Generic DescribeClustersRequest _
@@ -439,18 +438,18 @@ instance encodeDescribeClustersRequest :: Encode DescribeClustersRequest where e
 
 -- | Constructs DescribeClustersRequest from required parameters
 newDescribeClustersRequest :: DescribeClustersRequest
-newDescribeClustersRequest  = DescribeClustersRequest { "ClusterNames": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeClustersRequest  = DescribeClustersRequest { "ClusterNames": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeClustersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClustersRequest' :: ( { "ClusterNames" :: NullOrUndefined (ClusterNameList) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } -> {"ClusterNames" :: NullOrUndefined (ClusterNameList) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeClustersRequest
-newDescribeClustersRequest'  customize = (DescribeClustersRequest <<< customize) { "ClusterNames": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeClustersRequest' :: ( { "ClusterNames" :: Maybe (ClusterNameList) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } -> {"ClusterNames" :: Maybe (ClusterNameList) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } ) -> DescribeClustersRequest
+newDescribeClustersRequest'  customize = (DescribeClustersRequest <<< customize) { "ClusterNames": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeClustersResponse = DescribeClustersResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "Clusters" :: NullOrUndefined (ClusterList)
+  { "NextToken" :: Maybe (String)
+  , "Clusters" :: Maybe (ClusterList)
   }
 derive instance newtypeDescribeClustersResponse :: Newtype DescribeClustersResponse _
 derive instance repGenericDescribeClustersResponse :: Generic DescribeClustersResponse _
@@ -460,18 +459,18 @@ instance encodeDescribeClustersResponse :: Encode DescribeClustersResponse where
 
 -- | Constructs DescribeClustersResponse from required parameters
 newDescribeClustersResponse :: DescribeClustersResponse
-newDescribeClustersResponse  = DescribeClustersResponse { "Clusters": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeClustersResponse  = DescribeClustersResponse { "Clusters": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeClustersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClustersResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "Clusters" :: NullOrUndefined (ClusterList) } -> {"NextToken" :: NullOrUndefined (String) , "Clusters" :: NullOrUndefined (ClusterList) } ) -> DescribeClustersResponse
-newDescribeClustersResponse'  customize = (DescribeClustersResponse <<< customize) { "Clusters": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeClustersResponse' :: ( { "NextToken" :: Maybe (String) , "Clusters" :: Maybe (ClusterList) } -> {"NextToken" :: Maybe (String) , "Clusters" :: Maybe (ClusterList) } ) -> DescribeClustersResponse
+newDescribeClustersResponse'  customize = (DescribeClustersResponse <<< customize) { "Clusters": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeDefaultParametersRequest = DescribeDefaultParametersRequest 
-  { "MaxResults" :: NullOrUndefined (IntegerOptional)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (IntegerOptional)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeDefaultParametersRequest :: Newtype DescribeDefaultParametersRequest _
 derive instance repGenericDescribeDefaultParametersRequest :: Generic DescribeDefaultParametersRequest _
@@ -481,18 +480,18 @@ instance encodeDescribeDefaultParametersRequest :: Encode DescribeDefaultParamet
 
 -- | Constructs DescribeDefaultParametersRequest from required parameters
 newDescribeDefaultParametersRequest :: DescribeDefaultParametersRequest
-newDescribeDefaultParametersRequest  = DescribeDefaultParametersRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDefaultParametersRequest  = DescribeDefaultParametersRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeDefaultParametersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDefaultParametersRequest' :: ( { "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeDefaultParametersRequest
-newDescribeDefaultParametersRequest'  customize = (DescribeDefaultParametersRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeDefaultParametersRequest' :: ( { "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } ) -> DescribeDefaultParametersRequest
+newDescribeDefaultParametersRequest'  customize = (DescribeDefaultParametersRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeDefaultParametersResponse = DescribeDefaultParametersResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "Parameters" :: NullOrUndefined (ParameterList)
+  { "NextToken" :: Maybe (String)
+  , "Parameters" :: Maybe (ParameterList)
   }
 derive instance newtypeDescribeDefaultParametersResponse :: Newtype DescribeDefaultParametersResponse _
 derive instance repGenericDescribeDefaultParametersResponse :: Generic DescribeDefaultParametersResponse _
@@ -502,23 +501,23 @@ instance encodeDescribeDefaultParametersResponse :: Encode DescribeDefaultParame
 
 -- | Constructs DescribeDefaultParametersResponse from required parameters
 newDescribeDefaultParametersResponse :: DescribeDefaultParametersResponse
-newDescribeDefaultParametersResponse  = DescribeDefaultParametersResponse { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeDefaultParametersResponse  = DescribeDefaultParametersResponse { "NextToken": Nothing, "Parameters": Nothing }
 
 -- | Constructs DescribeDefaultParametersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDefaultParametersResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParameterList) } -> {"NextToken" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParameterList) } ) -> DescribeDefaultParametersResponse
-newDescribeDefaultParametersResponse'  customize = (DescribeDefaultParametersResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeDefaultParametersResponse' :: ( { "NextToken" :: Maybe (String) , "Parameters" :: Maybe (ParameterList) } -> {"NextToken" :: Maybe (String) , "Parameters" :: Maybe (ParameterList) } ) -> DescribeDefaultParametersResponse
+newDescribeDefaultParametersResponse'  customize = (DescribeDefaultParametersResponse <<< customize) { "NextToken": Nothing, "Parameters": Nothing }
 
 
 
 newtype DescribeEventsRequest = DescribeEventsRequest 
-  { "SourceName" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "EndTime" :: NullOrUndefined (TStamp)
-  , "Duration" :: NullOrUndefined (IntegerOptional)
-  , "MaxResults" :: NullOrUndefined (IntegerOptional)
-  , "NextToken" :: NullOrUndefined (String)
+  { "SourceName" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "StartTime" :: Maybe (TStamp)
+  , "EndTime" :: Maybe (TStamp)
+  , "Duration" :: Maybe (IntegerOptional)
+  , "MaxResults" :: Maybe (IntegerOptional)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeEventsRequest :: Newtype DescribeEventsRequest _
 derive instance repGenericDescribeEventsRequest :: Generic DescribeEventsRequest _
@@ -528,18 +527,18 @@ instance encodeDescribeEventsRequest :: Encode DescribeEventsRequest where encod
 
 -- | Constructs DescribeEventsRequest from required parameters
 newDescribeEventsRequest :: DescribeEventsRequest
-newDescribeEventsRequest  = DescribeEventsRequest { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SourceName": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsRequest  = DescribeEventsRequest { "Duration": Nothing, "EndTime": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "SourceName": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 -- | Constructs DescribeEventsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventsRequest' :: ( { "SourceName" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } -> {"SourceName" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeEventsRequest
-newDescribeEventsRequest'  customize = (DescribeEventsRequest <<< customize) { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SourceName": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsRequest' :: ( { "SourceName" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } -> {"SourceName" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } ) -> DescribeEventsRequest
+newDescribeEventsRequest'  customize = (DescribeEventsRequest <<< customize) { "Duration": Nothing, "EndTime": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "SourceName": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 
 
 newtype DescribeEventsResponse = DescribeEventsResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "Events" :: NullOrUndefined (EventList)
+  { "NextToken" :: Maybe (String)
+  , "Events" :: Maybe (EventList)
   }
 derive instance newtypeDescribeEventsResponse :: Newtype DescribeEventsResponse _
 derive instance repGenericDescribeEventsResponse :: Generic DescribeEventsResponse _
@@ -549,19 +548,19 @@ instance encodeDescribeEventsResponse :: Encode DescribeEventsResponse where enc
 
 -- | Constructs DescribeEventsResponse from required parameters
 newDescribeEventsResponse :: DescribeEventsResponse
-newDescribeEventsResponse  = DescribeEventsResponse { "Events": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEventsResponse  = DescribeEventsResponse { "Events": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeEventsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventsResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } -> {"NextToken" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } ) -> DescribeEventsResponse
-newDescribeEventsResponse'  customize = (DescribeEventsResponse <<< customize) { "Events": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEventsResponse' :: ( { "NextToken" :: Maybe (String) , "Events" :: Maybe (EventList) } -> {"NextToken" :: Maybe (String) , "Events" :: Maybe (EventList) } ) -> DescribeEventsResponse
+newDescribeEventsResponse'  customize = (DescribeEventsResponse <<< customize) { "Events": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeParameterGroupsRequest = DescribeParameterGroupsRequest 
-  { "ParameterGroupNames" :: NullOrUndefined (ParameterGroupNameList)
-  , "MaxResults" :: NullOrUndefined (IntegerOptional)
-  , "NextToken" :: NullOrUndefined (String)
+  { "ParameterGroupNames" :: Maybe (ParameterGroupNameList)
+  , "MaxResults" :: Maybe (IntegerOptional)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeParameterGroupsRequest :: Newtype DescribeParameterGroupsRequest _
 derive instance repGenericDescribeParameterGroupsRequest :: Generic DescribeParameterGroupsRequest _
@@ -571,18 +570,18 @@ instance encodeDescribeParameterGroupsRequest :: Encode DescribeParameterGroupsR
 
 -- | Constructs DescribeParameterGroupsRequest from required parameters
 newDescribeParameterGroupsRequest :: DescribeParameterGroupsRequest
-newDescribeParameterGroupsRequest  = DescribeParameterGroupsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ParameterGroupNames": (NullOrUndefined Nothing) }
+newDescribeParameterGroupsRequest  = DescribeParameterGroupsRequest { "MaxResults": Nothing, "NextToken": Nothing, "ParameterGroupNames": Nothing }
 
 -- | Constructs DescribeParameterGroupsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeParameterGroupsRequest' :: ( { "ParameterGroupNames" :: NullOrUndefined (ParameterGroupNameList) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } -> {"ParameterGroupNames" :: NullOrUndefined (ParameterGroupNameList) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeParameterGroupsRequest
-newDescribeParameterGroupsRequest'  customize = (DescribeParameterGroupsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ParameterGroupNames": (NullOrUndefined Nothing) }
+newDescribeParameterGroupsRequest' :: ( { "ParameterGroupNames" :: Maybe (ParameterGroupNameList) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } -> {"ParameterGroupNames" :: Maybe (ParameterGroupNameList) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } ) -> DescribeParameterGroupsRequest
+newDescribeParameterGroupsRequest'  customize = (DescribeParameterGroupsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing, "ParameterGroupNames": Nothing }
 
 
 
 newtype DescribeParameterGroupsResponse = DescribeParameterGroupsResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "ParameterGroups" :: NullOrUndefined (ParameterGroupList)
+  { "NextToken" :: Maybe (String)
+  , "ParameterGroups" :: Maybe (ParameterGroupList)
   }
 derive instance newtypeDescribeParameterGroupsResponse :: Newtype DescribeParameterGroupsResponse _
 derive instance repGenericDescribeParameterGroupsResponse :: Generic DescribeParameterGroupsResponse _
@@ -592,20 +591,20 @@ instance encodeDescribeParameterGroupsResponse :: Encode DescribeParameterGroups
 
 -- | Constructs DescribeParameterGroupsResponse from required parameters
 newDescribeParameterGroupsResponse :: DescribeParameterGroupsResponse
-newDescribeParameterGroupsResponse  = DescribeParameterGroupsResponse { "NextToken": (NullOrUndefined Nothing), "ParameterGroups": (NullOrUndefined Nothing) }
+newDescribeParameterGroupsResponse  = DescribeParameterGroupsResponse { "NextToken": Nothing, "ParameterGroups": Nothing }
 
 -- | Constructs DescribeParameterGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeParameterGroupsResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "ParameterGroups" :: NullOrUndefined (ParameterGroupList) } -> {"NextToken" :: NullOrUndefined (String) , "ParameterGroups" :: NullOrUndefined (ParameterGroupList) } ) -> DescribeParameterGroupsResponse
-newDescribeParameterGroupsResponse'  customize = (DescribeParameterGroupsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "ParameterGroups": (NullOrUndefined Nothing) }
+newDescribeParameterGroupsResponse' :: ( { "NextToken" :: Maybe (String) , "ParameterGroups" :: Maybe (ParameterGroupList) } -> {"NextToken" :: Maybe (String) , "ParameterGroups" :: Maybe (ParameterGroupList) } ) -> DescribeParameterGroupsResponse
+newDescribeParameterGroupsResponse'  customize = (DescribeParameterGroupsResponse <<< customize) { "NextToken": Nothing, "ParameterGroups": Nothing }
 
 
 
 newtype DescribeParametersRequest = DescribeParametersRequest 
   { "ParameterGroupName" :: (String)
-  , "Source" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (IntegerOptional)
-  , "NextToken" :: NullOrUndefined (String)
+  , "Source" :: Maybe (String)
+  , "MaxResults" :: Maybe (IntegerOptional)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeParametersRequest :: Newtype DescribeParametersRequest _
 derive instance repGenericDescribeParametersRequest :: Generic DescribeParametersRequest _
@@ -615,18 +614,18 @@ instance encodeDescribeParametersRequest :: Encode DescribeParametersRequest whe
 
 -- | Constructs DescribeParametersRequest from required parameters
 newDescribeParametersRequest :: String -> DescribeParametersRequest
-newDescribeParametersRequest _ParameterGroupName = DescribeParametersRequest { "ParameterGroupName": _ParameterGroupName, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newDescribeParametersRequest _ParameterGroupName = DescribeParametersRequest { "ParameterGroupName": _ParameterGroupName, "MaxResults": Nothing, "NextToken": Nothing, "Source": Nothing }
 
 -- | Constructs DescribeParametersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeParametersRequest' :: String -> ( { "ParameterGroupName" :: (String) , "Source" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } -> {"ParameterGroupName" :: (String) , "Source" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeParametersRequest
-newDescribeParametersRequest' _ParameterGroupName customize = (DescribeParametersRequest <<< customize) { "ParameterGroupName": _ParameterGroupName, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newDescribeParametersRequest' :: String -> ( { "ParameterGroupName" :: (String) , "Source" :: Maybe (String) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } -> {"ParameterGroupName" :: (String) , "Source" :: Maybe (String) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } ) -> DescribeParametersRequest
+newDescribeParametersRequest' _ParameterGroupName customize = (DescribeParametersRequest <<< customize) { "ParameterGroupName": _ParameterGroupName, "MaxResults": Nothing, "NextToken": Nothing, "Source": Nothing }
 
 
 
 newtype DescribeParametersResponse = DescribeParametersResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "Parameters" :: NullOrUndefined (ParameterList)
+  { "NextToken" :: Maybe (String)
+  , "Parameters" :: Maybe (ParameterList)
   }
 derive instance newtypeDescribeParametersResponse :: Newtype DescribeParametersResponse _
 derive instance repGenericDescribeParametersResponse :: Generic DescribeParametersResponse _
@@ -636,19 +635,19 @@ instance encodeDescribeParametersResponse :: Encode DescribeParametersResponse w
 
 -- | Constructs DescribeParametersResponse from required parameters
 newDescribeParametersResponse :: DescribeParametersResponse
-newDescribeParametersResponse  = DescribeParametersResponse { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeParametersResponse  = DescribeParametersResponse { "NextToken": Nothing, "Parameters": Nothing }
 
 -- | Constructs DescribeParametersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeParametersResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParameterList) } -> {"NextToken" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParameterList) } ) -> DescribeParametersResponse
-newDescribeParametersResponse'  customize = (DescribeParametersResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeParametersResponse' :: ( { "NextToken" :: Maybe (String) , "Parameters" :: Maybe (ParameterList) } -> {"NextToken" :: Maybe (String) , "Parameters" :: Maybe (ParameterList) } ) -> DescribeParametersResponse
+newDescribeParametersResponse'  customize = (DescribeParametersResponse <<< customize) { "NextToken": Nothing, "Parameters": Nothing }
 
 
 
 newtype DescribeSubnetGroupsRequest = DescribeSubnetGroupsRequest 
-  { "SubnetGroupNames" :: NullOrUndefined (SubnetGroupNameList)
-  , "MaxResults" :: NullOrUndefined (IntegerOptional)
-  , "NextToken" :: NullOrUndefined (String)
+  { "SubnetGroupNames" :: Maybe (SubnetGroupNameList)
+  , "MaxResults" :: Maybe (IntegerOptional)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeSubnetGroupsRequest :: Newtype DescribeSubnetGroupsRequest _
 derive instance repGenericDescribeSubnetGroupsRequest :: Generic DescribeSubnetGroupsRequest _
@@ -658,18 +657,18 @@ instance encodeDescribeSubnetGroupsRequest :: Encode DescribeSubnetGroupsRequest
 
 -- | Constructs DescribeSubnetGroupsRequest from required parameters
 newDescribeSubnetGroupsRequest :: DescribeSubnetGroupsRequest
-newDescribeSubnetGroupsRequest  = DescribeSubnetGroupsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SubnetGroupNames": (NullOrUndefined Nothing) }
+newDescribeSubnetGroupsRequest  = DescribeSubnetGroupsRequest { "MaxResults": Nothing, "NextToken": Nothing, "SubnetGroupNames": Nothing }
 
 -- | Constructs DescribeSubnetGroupsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSubnetGroupsRequest' :: ( { "SubnetGroupNames" :: NullOrUndefined (SubnetGroupNameList) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } -> {"SubnetGroupNames" :: NullOrUndefined (SubnetGroupNameList) , "MaxResults" :: NullOrUndefined (IntegerOptional) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeSubnetGroupsRequest
-newDescribeSubnetGroupsRequest'  customize = (DescribeSubnetGroupsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SubnetGroupNames": (NullOrUndefined Nothing) }
+newDescribeSubnetGroupsRequest' :: ( { "SubnetGroupNames" :: Maybe (SubnetGroupNameList) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } -> {"SubnetGroupNames" :: Maybe (SubnetGroupNameList) , "MaxResults" :: Maybe (IntegerOptional) , "NextToken" :: Maybe (String) } ) -> DescribeSubnetGroupsRequest
+newDescribeSubnetGroupsRequest'  customize = (DescribeSubnetGroupsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing, "SubnetGroupNames": Nothing }
 
 
 
 newtype DescribeSubnetGroupsResponse = DescribeSubnetGroupsResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "SubnetGroups" :: NullOrUndefined (SubnetGroupList)
+  { "NextToken" :: Maybe (String)
+  , "SubnetGroups" :: Maybe (SubnetGroupList)
   }
 derive instance newtypeDescribeSubnetGroupsResponse :: Newtype DescribeSubnetGroupsResponse _
 derive instance repGenericDescribeSubnetGroupsResponse :: Generic DescribeSubnetGroupsResponse _
@@ -679,19 +678,19 @@ instance encodeDescribeSubnetGroupsResponse :: Encode DescribeSubnetGroupsRespon
 
 -- | Constructs DescribeSubnetGroupsResponse from required parameters
 newDescribeSubnetGroupsResponse :: DescribeSubnetGroupsResponse
-newDescribeSubnetGroupsResponse  = DescribeSubnetGroupsResponse { "NextToken": (NullOrUndefined Nothing), "SubnetGroups": (NullOrUndefined Nothing) }
+newDescribeSubnetGroupsResponse  = DescribeSubnetGroupsResponse { "NextToken": Nothing, "SubnetGroups": Nothing }
 
 -- | Constructs DescribeSubnetGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSubnetGroupsResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "SubnetGroups" :: NullOrUndefined (SubnetGroupList) } -> {"NextToken" :: NullOrUndefined (String) , "SubnetGroups" :: NullOrUndefined (SubnetGroupList) } ) -> DescribeSubnetGroupsResponse
-newDescribeSubnetGroupsResponse'  customize = (DescribeSubnetGroupsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "SubnetGroups": (NullOrUndefined Nothing) }
+newDescribeSubnetGroupsResponse' :: ( { "NextToken" :: Maybe (String) , "SubnetGroups" :: Maybe (SubnetGroupList) } -> {"NextToken" :: Maybe (String) , "SubnetGroups" :: Maybe (SubnetGroupList) } ) -> DescribeSubnetGroupsResponse
+newDescribeSubnetGroupsResponse'  customize = (DescribeSubnetGroupsResponse <<< customize) { "NextToken": Nothing, "SubnetGroups": Nothing }
 
 
 
 -- | <p>Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.</p>
 newtype Endpoint = Endpoint 
-  { "Address" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (Int)
+  { "Address" :: Maybe (String)
+  , "Port" :: Maybe (Int)
   }
 derive instance newtypeEndpoint :: Newtype Endpoint _
 derive instance repGenericEndpoint :: Generic Endpoint _
@@ -701,21 +700,21 @@ instance encodeEndpoint :: Encode Endpoint where encode = genericEncode options
 
 -- | Constructs Endpoint from required parameters
 newEndpoint :: Endpoint
-newEndpoint  = Endpoint { "Address": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newEndpoint  = Endpoint { "Address": Nothing, "Port": Nothing }
 
 -- | Constructs Endpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEndpoint' :: ( { "Address" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) } -> {"Address" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) } ) -> Endpoint
-newEndpoint'  customize = (Endpoint <<< customize) { "Address": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newEndpoint' :: ( { "Address" :: Maybe (String) , "Port" :: Maybe (Int) } -> {"Address" :: Maybe (String) , "Port" :: Maybe (Int) } ) -> Endpoint
+newEndpoint'  customize = (Endpoint <<< customize) { "Address": Nothing, "Port": Nothing }
 
 
 
 -- | <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node.</p>
 newtype Event = Event 
-  { "SourceName" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "Message" :: NullOrUndefined (String)
-  , "Date" :: NullOrUndefined (TStamp)
+  { "SourceName" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "Message" :: Maybe (String)
+  , "Date" :: Maybe (TStamp)
   }
 derive instance newtypeEvent :: Newtype Event _
 derive instance repGenericEvent :: Generic Event _
@@ -725,12 +724,12 @@ instance encodeEvent :: Encode Event where encode = genericEncode options
 
 -- | Constructs Event from required parameters
 newEvent :: Event
-newEvent  = Event { "Date": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "SourceName": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent  = Event { "Date": Nothing, "Message": Nothing, "SourceName": Nothing, "SourceType": Nothing }
 
 -- | Constructs Event's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEvent' :: ( { "SourceName" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "Date" :: NullOrUndefined (TStamp) } -> {"SourceName" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "Date" :: NullOrUndefined (TStamp) } ) -> Event
-newEvent'  customize = (Event <<< customize) { "Date": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "SourceName": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent' :: ( { "SourceName" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "Date" :: Maybe (TStamp) } -> {"SourceName" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "Date" :: Maybe (TStamp) } ) -> Event
+newEvent'  customize = (Event <<< customize) { "Date": Nothing, "Message": Nothing, "SourceName": Nothing, "SourceType": Nothing }
 
 
 
@@ -746,7 +745,7 @@ instance encodeEventList :: Encode EventList where encode = genericEncode option
 newtype IncreaseReplicationFactorRequest = IncreaseReplicationFactorRequest 
   { "ClusterName" :: (String)
   , "NewReplicationFactor" :: (Int)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList)
+  , "AvailabilityZones" :: Maybe (AvailabilityZoneList)
   }
 derive instance newtypeIncreaseReplicationFactorRequest :: Newtype IncreaseReplicationFactorRequest _
 derive instance repGenericIncreaseReplicationFactorRequest :: Generic IncreaseReplicationFactorRequest _
@@ -756,17 +755,17 @@ instance encodeIncreaseReplicationFactorRequest :: Encode IncreaseReplicationFac
 
 -- | Constructs IncreaseReplicationFactorRequest from required parameters
 newIncreaseReplicationFactorRequest :: String -> Int -> IncreaseReplicationFactorRequest
-newIncreaseReplicationFactorRequest _ClusterName _NewReplicationFactor = IncreaseReplicationFactorRequest { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": (NullOrUndefined Nothing) }
+newIncreaseReplicationFactorRequest _ClusterName _NewReplicationFactor = IncreaseReplicationFactorRequest { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": Nothing }
 
 -- | Constructs IncreaseReplicationFactorRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIncreaseReplicationFactorRequest' :: String -> Int -> ( { "ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) } -> {"ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) } ) -> IncreaseReplicationFactorRequest
-newIncreaseReplicationFactorRequest' _ClusterName _NewReplicationFactor customize = (IncreaseReplicationFactorRequest <<< customize) { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": (NullOrUndefined Nothing) }
+newIncreaseReplicationFactorRequest' :: String -> Int -> ( { "ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) } -> {"ClusterName" :: (String) , "NewReplicationFactor" :: (Int) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) } ) -> IncreaseReplicationFactorRequest
+newIncreaseReplicationFactorRequest' _ClusterName _NewReplicationFactor customize = (IncreaseReplicationFactorRequest <<< customize) { "ClusterName": _ClusterName, "NewReplicationFactor": _NewReplicationFactor, "AvailabilityZones": Nothing }
 
 
 
 newtype IncreaseReplicationFactorResponse = IncreaseReplicationFactorResponse 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeIncreaseReplicationFactorResponse :: Newtype IncreaseReplicationFactorResponse _
 derive instance repGenericIncreaseReplicationFactorResponse :: Generic IncreaseReplicationFactorResponse _
@@ -776,12 +775,12 @@ instance encodeIncreaseReplicationFactorResponse :: Encode IncreaseReplicationFa
 
 -- | Constructs IncreaseReplicationFactorResponse from required parameters
 newIncreaseReplicationFactorResponse :: IncreaseReplicationFactorResponse
-newIncreaseReplicationFactorResponse  = IncreaseReplicationFactorResponse { "Cluster": (NullOrUndefined Nothing) }
+newIncreaseReplicationFactorResponse  = IncreaseReplicationFactorResponse { "Cluster": Nothing }
 
 -- | Constructs IncreaseReplicationFactorResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIncreaseReplicationFactorResponse' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> IncreaseReplicationFactorResponse
-newIncreaseReplicationFactorResponse'  customize = (IncreaseReplicationFactorResponse <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newIncreaseReplicationFactorResponse' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> IncreaseReplicationFactorResponse
+newIncreaseReplicationFactorResponse'  customize = (IncreaseReplicationFactorResponse <<< customize) { "Cluster": Nothing }
 
 
 
@@ -826,7 +825,7 @@ instance encodeInvalidClusterStateFault :: Encode InvalidClusterStateFault where
 
 -- | <p>Two or more incompatible parameters were specified.</p>
 newtype InvalidParameterCombinationException = InvalidParameterCombinationException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeInvalidParameterCombinationException :: Newtype InvalidParameterCombinationException _
 derive instance repGenericInvalidParameterCombinationException :: Generic InvalidParameterCombinationException _
@@ -836,12 +835,12 @@ instance encodeInvalidParameterCombinationException :: Encode InvalidParameterCo
 
 -- | Constructs InvalidParameterCombinationException from required parameters
 newInvalidParameterCombinationException :: InvalidParameterCombinationException
-newInvalidParameterCombinationException  = InvalidParameterCombinationException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterCombinationException  = InvalidParameterCombinationException { "message": Nothing }
 
 -- | Constructs InvalidParameterCombinationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterCombinationException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> InvalidParameterCombinationException
-newInvalidParameterCombinationException'  customize = (InvalidParameterCombinationException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterCombinationException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> InvalidParameterCombinationException
+newInvalidParameterCombinationException'  customize = (InvalidParameterCombinationException <<< customize) { "message": Nothing }
 
 
 
@@ -857,7 +856,7 @@ instance encodeInvalidParameterGroupStateFault :: Encode InvalidParameterGroupSt
 
 -- | <p>The value for a parameter is invalid.</p>
 newtype InvalidParameterValueException = InvalidParameterValueException 
-  { "message" :: NullOrUndefined (AwsQueryErrorMessage)
+  { "message" :: Maybe (AwsQueryErrorMessage)
   }
 derive instance newtypeInvalidParameterValueException :: Newtype InvalidParameterValueException _
 derive instance repGenericInvalidParameterValueException :: Generic InvalidParameterValueException _
@@ -867,12 +866,12 @@ instance encodeInvalidParameterValueException :: Encode InvalidParameterValueExc
 
 -- | Constructs InvalidParameterValueException from required parameters
 newInvalidParameterValueException :: InvalidParameterValueException
-newInvalidParameterValueException  = InvalidParameterValueException { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException  = InvalidParameterValueException { "message": Nothing }
 
 -- | Constructs InvalidParameterValueException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameterValueException' :: ( { "message" :: NullOrUndefined (AwsQueryErrorMessage) } -> {"message" :: NullOrUndefined (AwsQueryErrorMessage) } ) -> InvalidParameterValueException
-newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidParameterValueException' :: ( { "message" :: Maybe (AwsQueryErrorMessage) } -> {"message" :: Maybe (AwsQueryErrorMessage) } ) -> InvalidParameterValueException
+newInvalidParameterValueException'  customize = (InvalidParameterValueException <<< customize) { "message": Nothing }
 
 
 
@@ -916,7 +915,7 @@ instance encodeKeyList :: Encode KeyList where encode = genericEncode options
 
 newtype ListTagsRequest = ListTagsRequest 
   { "ResourceName" :: (String)
-  , "NextToken" :: NullOrUndefined (String)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListTagsRequest :: Newtype ListTagsRequest _
 derive instance repGenericListTagsRequest :: Generic ListTagsRequest _
@@ -926,18 +925,18 @@ instance encodeListTagsRequest :: Encode ListTagsRequest where encode = genericE
 
 -- | Constructs ListTagsRequest from required parameters
 newListTagsRequest :: String -> ListTagsRequest
-newListTagsRequest _ResourceName = ListTagsRequest { "ResourceName": _ResourceName, "NextToken": (NullOrUndefined Nothing) }
+newListTagsRequest _ResourceName = ListTagsRequest { "ResourceName": _ResourceName, "NextToken": Nothing }
 
 -- | Constructs ListTagsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsRequest' :: String -> ( { "ResourceName" :: (String) , "NextToken" :: NullOrUndefined (String) } -> {"ResourceName" :: (String) , "NextToken" :: NullOrUndefined (String) } ) -> ListTagsRequest
-newListTagsRequest' _ResourceName customize = (ListTagsRequest <<< customize) { "ResourceName": _ResourceName, "NextToken": (NullOrUndefined Nothing) }
+newListTagsRequest' :: String -> ( { "ResourceName" :: (String) , "NextToken" :: Maybe (String) } -> {"ResourceName" :: (String) , "NextToken" :: Maybe (String) } ) -> ListTagsRequest
+newListTagsRequest' _ResourceName customize = (ListTagsRequest <<< customize) { "ResourceName": _ResourceName, "NextToken": Nothing }
 
 
 
 newtype ListTagsResponse = ListTagsResponse 
-  { "Tags" :: NullOrUndefined (TagList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Tags" :: Maybe (TagList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListTagsResponse :: Newtype ListTagsResponse _
 derive instance repGenericListTagsResponse :: Generic ListTagsResponse _
@@ -947,23 +946,23 @@ instance encodeListTagsResponse :: Encode ListTagsResponse where encode = generi
 
 -- | Constructs ListTagsResponse from required parameters
 newListTagsResponse :: ListTagsResponse
-newListTagsResponse  = ListTagsResponse { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsResponse  = ListTagsResponse { "NextToken": Nothing, "Tags": Nothing }
 
 -- | Constructs ListTagsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsResponse' :: ( { "Tags" :: NullOrUndefined (TagList) , "NextToken" :: NullOrUndefined (String) } -> {"Tags" :: NullOrUndefined (TagList) , "NextToken" :: NullOrUndefined (String) } ) -> ListTagsResponse
-newListTagsResponse'  customize = (ListTagsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsResponse' :: ( { "Tags" :: Maybe (TagList) , "NextToken" :: Maybe (String) } -> {"Tags" :: Maybe (TagList) , "NextToken" :: Maybe (String) } ) -> ListTagsResponse
+newListTagsResponse'  customize = (ListTagsResponse <<< customize) { "NextToken": Nothing, "Tags": Nothing }
 
 
 
 -- | <p>Represents an individual node within a DAX cluster.</p>
 newtype Node = Node 
-  { "NodeId" :: NullOrUndefined (String)
-  , "Endpoint" :: NullOrUndefined (Endpoint)
-  , "NodeCreateTime" :: NullOrUndefined (TStamp)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "NodeStatus" :: NullOrUndefined (String)
-  , "ParameterGroupStatus" :: NullOrUndefined (String)
+  { "NodeId" :: Maybe (String)
+  , "Endpoint" :: Maybe (Endpoint)
+  , "NodeCreateTime" :: Maybe (TStamp)
+  , "AvailabilityZone" :: Maybe (String)
+  , "NodeStatus" :: Maybe (String)
+  , "ParameterGroupStatus" :: Maybe (String)
   }
 derive instance newtypeNode :: Newtype Node _
 derive instance repGenericNode :: Generic Node _
@@ -973,12 +972,12 @@ instance encodeNode :: Encode Node where encode = genericEncode options
 
 -- | Constructs Node from required parameters
 newNode :: Node
-newNode  = Node { "AvailabilityZone": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "NodeCreateTime": (NullOrUndefined Nothing), "NodeId": (NullOrUndefined Nothing), "NodeStatus": (NullOrUndefined Nothing), "ParameterGroupStatus": (NullOrUndefined Nothing) }
+newNode  = Node { "AvailabilityZone": Nothing, "Endpoint": Nothing, "NodeCreateTime": Nothing, "NodeId": Nothing, "NodeStatus": Nothing, "ParameterGroupStatus": Nothing }
 
 -- | Constructs Node's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNode' :: ( { "NodeId" :: NullOrUndefined (String) , "Endpoint" :: NullOrUndefined (Endpoint) , "NodeCreateTime" :: NullOrUndefined (TStamp) , "AvailabilityZone" :: NullOrUndefined (String) , "NodeStatus" :: NullOrUndefined (String) , "ParameterGroupStatus" :: NullOrUndefined (String) } -> {"NodeId" :: NullOrUndefined (String) , "Endpoint" :: NullOrUndefined (Endpoint) , "NodeCreateTime" :: NullOrUndefined (TStamp) , "AvailabilityZone" :: NullOrUndefined (String) , "NodeStatus" :: NullOrUndefined (String) , "ParameterGroupStatus" :: NullOrUndefined (String) } ) -> Node
-newNode'  customize = (Node <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "NodeCreateTime": (NullOrUndefined Nothing), "NodeId": (NullOrUndefined Nothing), "NodeStatus": (NullOrUndefined Nothing), "ParameterGroupStatus": (NullOrUndefined Nothing) }
+newNode' :: ( { "NodeId" :: Maybe (String) , "Endpoint" :: Maybe (Endpoint) , "NodeCreateTime" :: Maybe (TStamp) , "AvailabilityZone" :: Maybe (String) , "NodeStatus" :: Maybe (String) , "ParameterGroupStatus" :: Maybe (String) } -> {"NodeId" :: Maybe (String) , "Endpoint" :: Maybe (Endpoint) , "NodeCreateTime" :: Maybe (TStamp) , "AvailabilityZone" :: Maybe (String) , "NodeStatus" :: Maybe (String) , "ParameterGroupStatus" :: Maybe (String) } ) -> Node
+newNode'  customize = (Node <<< customize) { "AvailabilityZone": Nothing, "Endpoint": Nothing, "NodeCreateTime": Nothing, "NodeId": Nothing, "NodeStatus": Nothing, "ParameterGroupStatus": Nothing }
 
 
 
@@ -1032,8 +1031,8 @@ instance encodeNodeQuotaForCustomerExceededFault :: Encode NodeQuotaForCustomerE
 
 -- | <p>Represents a parameter value that is applicable to a particular node type.</p>
 newtype NodeTypeSpecificValue = NodeTypeSpecificValue 
-  { "NodeType" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "NodeType" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeNodeTypeSpecificValue :: Newtype NodeTypeSpecificValue _
 derive instance repGenericNodeTypeSpecificValue :: Generic NodeTypeSpecificValue _
@@ -1043,12 +1042,12 @@ instance encodeNodeTypeSpecificValue :: Encode NodeTypeSpecificValue where encod
 
 -- | Constructs NodeTypeSpecificValue from required parameters
 newNodeTypeSpecificValue :: NodeTypeSpecificValue
-newNodeTypeSpecificValue  = NodeTypeSpecificValue { "NodeType": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newNodeTypeSpecificValue  = NodeTypeSpecificValue { "NodeType": Nothing, "Value": Nothing }
 
 -- | Constructs NodeTypeSpecificValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNodeTypeSpecificValue' :: ( { "NodeType" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"NodeType" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> NodeTypeSpecificValue
-newNodeTypeSpecificValue'  customize = (NodeTypeSpecificValue <<< customize) { "NodeType": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newNodeTypeSpecificValue' :: ( { "NodeType" :: Maybe (String) , "Value" :: Maybe (String) } -> {"NodeType" :: Maybe (String) , "Value" :: Maybe (String) } ) -> NodeTypeSpecificValue
+newNodeTypeSpecificValue'  customize = (NodeTypeSpecificValue <<< customize) { "NodeType": Nothing, "Value": Nothing }
 
 
 
@@ -1063,8 +1062,8 @@ instance encodeNodeTypeSpecificValueList :: Encode NodeTypeSpecificValueList whe
 
 -- | <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
 newtype NotificationConfiguration = NotificationConfiguration 
-  { "TopicArn" :: NullOrUndefined (String)
-  , "TopicStatus" :: NullOrUndefined (String)
+  { "TopicArn" :: Maybe (String)
+  , "TopicStatus" :: Maybe (String)
   }
 derive instance newtypeNotificationConfiguration :: Newtype NotificationConfiguration _
 derive instance repGenericNotificationConfiguration :: Generic NotificationConfiguration _
@@ -1074,27 +1073,27 @@ instance encodeNotificationConfiguration :: Encode NotificationConfiguration whe
 
 -- | Constructs NotificationConfiguration from required parameters
 newNotificationConfiguration :: NotificationConfiguration
-newNotificationConfiguration  = NotificationConfiguration { "TopicArn": (NullOrUndefined Nothing), "TopicStatus": (NullOrUndefined Nothing) }
+newNotificationConfiguration  = NotificationConfiguration { "TopicArn": Nothing, "TopicStatus": Nothing }
 
 -- | Constructs NotificationConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationConfiguration' :: ( { "TopicArn" :: NullOrUndefined (String) , "TopicStatus" :: NullOrUndefined (String) } -> {"TopicArn" :: NullOrUndefined (String) , "TopicStatus" :: NullOrUndefined (String) } ) -> NotificationConfiguration
-newNotificationConfiguration'  customize = (NotificationConfiguration <<< customize) { "TopicArn": (NullOrUndefined Nothing), "TopicStatus": (NullOrUndefined Nothing) }
+newNotificationConfiguration' :: ( { "TopicArn" :: Maybe (String) , "TopicStatus" :: Maybe (String) } -> {"TopicArn" :: Maybe (String) , "TopicStatus" :: Maybe (String) } ) -> NotificationConfiguration
+newNotificationConfiguration'  customize = (NotificationConfiguration <<< customize) { "TopicArn": Nothing, "TopicStatus": Nothing }
 
 
 
 -- | <p>Describes an individual setting that controls some aspect of DAX behavior.</p>
 newtype Parameter = Parameter 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "ParameterType" :: NullOrUndefined (ParameterType)
-  , "ParameterValue" :: NullOrUndefined (String)
-  , "NodeTypeSpecificValues" :: NullOrUndefined (NodeTypeSpecificValueList)
-  , "Description" :: NullOrUndefined (String)
-  , "Source" :: NullOrUndefined (String)
-  , "DataType" :: NullOrUndefined (String)
-  , "AllowedValues" :: NullOrUndefined (String)
-  , "IsModifiable" :: NullOrUndefined (IsModifiable)
-  , "ChangeType" :: NullOrUndefined (ChangeType)
+  { "ParameterName" :: Maybe (String)
+  , "ParameterType" :: Maybe (ParameterType)
+  , "ParameterValue" :: Maybe (String)
+  , "NodeTypeSpecificValues" :: Maybe (NodeTypeSpecificValueList)
+  , "Description" :: Maybe (String)
+  , "Source" :: Maybe (String)
+  , "DataType" :: Maybe (String)
+  , "AllowedValues" :: Maybe (String)
+  , "IsModifiable" :: Maybe (IsModifiable)
+  , "ChangeType" :: Maybe (ChangeType)
   }
 derive instance newtypeParameter :: Newtype Parameter _
 derive instance repGenericParameter :: Generic Parameter _
@@ -1104,19 +1103,19 @@ instance encodeParameter :: Encode Parameter where encode = genericEncode option
 
 -- | Constructs Parameter from required parameters
 newParameter :: Parameter
-newParameter  = Parameter { "AllowedValues": (NullOrUndefined Nothing), "ChangeType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "NodeTypeSpecificValues": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "ParameterType": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newParameter  = Parameter { "AllowedValues": Nothing, "ChangeType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "NodeTypeSpecificValues": Nothing, "ParameterName": Nothing, "ParameterType": Nothing, "ParameterValue": Nothing, "Source": Nothing }
 
 -- | Constructs Parameter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameter' :: ( { "ParameterName" :: NullOrUndefined (String) , "ParameterType" :: NullOrUndefined (ParameterType) , "ParameterValue" :: NullOrUndefined (String) , "NodeTypeSpecificValues" :: NullOrUndefined (NodeTypeSpecificValueList) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "IsModifiable" :: NullOrUndefined (IsModifiable) , "ChangeType" :: NullOrUndefined (ChangeType) } -> {"ParameterName" :: NullOrUndefined (String) , "ParameterType" :: NullOrUndefined (ParameterType) , "ParameterValue" :: NullOrUndefined (String) , "NodeTypeSpecificValues" :: NullOrUndefined (NodeTypeSpecificValueList) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "IsModifiable" :: NullOrUndefined (IsModifiable) , "ChangeType" :: NullOrUndefined (ChangeType) } ) -> Parameter
-newParameter'  customize = (Parameter <<< customize) { "AllowedValues": (NullOrUndefined Nothing), "ChangeType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "NodeTypeSpecificValues": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "ParameterType": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newParameter' :: ( { "ParameterName" :: Maybe (String) , "ParameterType" :: Maybe (ParameterType) , "ParameterValue" :: Maybe (String) , "NodeTypeSpecificValues" :: Maybe (NodeTypeSpecificValueList) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "IsModifiable" :: Maybe (IsModifiable) , "ChangeType" :: Maybe (ChangeType) } -> {"ParameterName" :: Maybe (String) , "ParameterType" :: Maybe (ParameterType) , "ParameterValue" :: Maybe (String) , "NodeTypeSpecificValues" :: Maybe (NodeTypeSpecificValueList) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "IsModifiable" :: Maybe (IsModifiable) , "ChangeType" :: Maybe (ChangeType) } ) -> Parameter
+newParameter'  customize = (Parameter <<< customize) { "AllowedValues": Nothing, "ChangeType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "NodeTypeSpecificValues": Nothing, "ParameterName": Nothing, "ParameterType": Nothing, "ParameterValue": Nothing, "Source": Nothing }
 
 
 
 -- | <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
 newtype ParameterGroup = ParameterGroup 
-  { "ParameterGroupName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  { "ParameterGroupName" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeParameterGroup :: Newtype ParameterGroup _
 derive instance repGenericParameterGroup :: Generic ParameterGroup _
@@ -1126,12 +1125,12 @@ instance encodeParameterGroup :: Encode ParameterGroup where encode = genericEnc
 
 -- | Constructs ParameterGroup from required parameters
 newParameterGroup :: ParameterGroup
-newParameterGroup  = ParameterGroup { "Description": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing) }
+newParameterGroup  = ParameterGroup { "Description": Nothing, "ParameterGroupName": Nothing }
 
 -- | Constructs ParameterGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterGroup' :: ( { "ParameterGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"ParameterGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> ParameterGroup
-newParameterGroup'  customize = (ParameterGroup <<< customize) { "Description": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing) }
+newParameterGroup' :: ( { "ParameterGroupName" :: Maybe (String) , "Description" :: Maybe (String) } -> {"ParameterGroupName" :: Maybe (String) , "Description" :: Maybe (String) } ) -> ParameterGroup
+newParameterGroup'  customize = (ParameterGroup <<< customize) { "Description": Nothing, "ParameterGroupName": Nothing }
 
 
 
@@ -1185,9 +1184,9 @@ instance encodeParameterGroupQuotaExceededFault :: Encode ParameterGroupQuotaExc
 
 -- | <p>The status of a parameter group.</p>
 newtype ParameterGroupStatus = ParameterGroupStatus 
-  { "ParameterGroupName" :: NullOrUndefined (String)
-  , "ParameterApplyStatus" :: NullOrUndefined (String)
-  , "NodeIdsToReboot" :: NullOrUndefined (NodeIdentifierList)
+  { "ParameterGroupName" :: Maybe (String)
+  , "ParameterApplyStatus" :: Maybe (String)
+  , "NodeIdsToReboot" :: Maybe (NodeIdentifierList)
   }
 derive instance newtypeParameterGroupStatus :: Newtype ParameterGroupStatus _
 derive instance repGenericParameterGroupStatus :: Generic ParameterGroupStatus _
@@ -1197,12 +1196,12 @@ instance encodeParameterGroupStatus :: Encode ParameterGroupStatus where encode 
 
 -- | Constructs ParameterGroupStatus from required parameters
 newParameterGroupStatus :: ParameterGroupStatus
-newParameterGroupStatus  = ParameterGroupStatus { "NodeIdsToReboot": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing) }
+newParameterGroupStatus  = ParameterGroupStatus { "NodeIdsToReboot": Nothing, "ParameterApplyStatus": Nothing, "ParameterGroupName": Nothing }
 
 -- | Constructs ParameterGroupStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterGroupStatus' :: ( { "ParameterGroupName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "NodeIdsToReboot" :: NullOrUndefined (NodeIdentifierList) } -> {"ParameterGroupName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "NodeIdsToReboot" :: NullOrUndefined (NodeIdentifierList) } ) -> ParameterGroupStatus
-newParameterGroupStatus'  customize = (ParameterGroupStatus <<< customize) { "NodeIdsToReboot": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing) }
+newParameterGroupStatus' :: ( { "ParameterGroupName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "NodeIdsToReboot" :: Maybe (NodeIdentifierList) } -> {"ParameterGroupName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "NodeIdsToReboot" :: Maybe (NodeIdentifierList) } ) -> ParameterGroupStatus
+newParameterGroupStatus'  customize = (ParameterGroupStatus <<< customize) { "NodeIdsToReboot": Nothing, "ParameterApplyStatus": Nothing, "ParameterGroupName": Nothing }
 
 
 
@@ -1217,8 +1216,8 @@ instance encodeParameterList :: Encode ParameterList where encode = genericEncod
 
 -- | <p>An individual DAX parameter.</p>
 newtype ParameterNameValue = ParameterNameValue 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "ParameterValue" :: NullOrUndefined (String)
+  { "ParameterName" :: Maybe (String)
+  , "ParameterValue" :: Maybe (String)
   }
 derive instance newtypeParameterNameValue :: Newtype ParameterNameValue _
 derive instance repGenericParameterNameValue :: Generic ParameterNameValue _
@@ -1228,12 +1227,12 @@ instance encodeParameterNameValue :: Encode ParameterNameValue where encode = ge
 
 -- | Constructs ParameterNameValue from required parameters
 newParameterNameValue :: ParameterNameValue
-newParameterNameValue  = ParameterNameValue { "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing) }
+newParameterNameValue  = ParameterNameValue { "ParameterName": Nothing, "ParameterValue": Nothing }
 
 -- | Constructs ParameterNameValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterNameValue' :: ( { "ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) } -> {"ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) } ) -> ParameterNameValue
-newParameterNameValue'  customize = (ParameterNameValue <<< customize) { "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing) }
+newParameterNameValue' :: ( { "ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) } -> {"ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) } ) -> ParameterNameValue
+newParameterNameValue'  customize = (ParameterNameValue <<< customize) { "ParameterName": Nothing, "ParameterValue": Nothing }
 
 
 
@@ -1277,7 +1276,7 @@ newRebootNodeRequest' _ClusterName _NodeId customize = (RebootNodeRequest <<< cu
 
 
 newtype RebootNodeResponse = RebootNodeResponse 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeRebootNodeResponse :: Newtype RebootNodeResponse _
 derive instance repGenericRebootNodeResponse :: Generic RebootNodeResponse _
@@ -1287,12 +1286,12 @@ instance encodeRebootNodeResponse :: Encode RebootNodeResponse where encode = ge
 
 -- | Constructs RebootNodeResponse from required parameters
 newRebootNodeResponse :: RebootNodeResponse
-newRebootNodeResponse  = RebootNodeResponse { "Cluster": (NullOrUndefined Nothing) }
+newRebootNodeResponse  = RebootNodeResponse { "Cluster": Nothing }
 
 -- | Constructs RebootNodeResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRebootNodeResponse' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> RebootNodeResponse
-newRebootNodeResponse'  customize = (RebootNodeResponse <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newRebootNodeResponse' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> RebootNodeResponse
+newRebootNodeResponse'  customize = (RebootNodeResponse <<< customize) { "Cluster": Nothing }
 
 
 
@@ -1307,8 +1306,8 @@ instance encodeSecurityGroupIdentifierList :: Encode SecurityGroupIdentifierList
 
 -- | <p>An individual VPC security group and its status.</p>
 newtype SecurityGroupMembership = SecurityGroupMembership 
-  { "SecurityGroupIdentifier" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "SecurityGroupIdentifier" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeSecurityGroupMembership :: Newtype SecurityGroupMembership _
 derive instance repGenericSecurityGroupMembership :: Generic SecurityGroupMembership _
@@ -1318,12 +1317,12 @@ instance encodeSecurityGroupMembership :: Encode SecurityGroupMembership where e
 
 -- | Constructs SecurityGroupMembership from required parameters
 newSecurityGroupMembership :: SecurityGroupMembership
-newSecurityGroupMembership  = SecurityGroupMembership { "SecurityGroupIdentifier": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newSecurityGroupMembership  = SecurityGroupMembership { "SecurityGroupIdentifier": Nothing, "Status": Nothing }
 
 -- | Constructs SecurityGroupMembership's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSecurityGroupMembership' :: ( { "SecurityGroupIdentifier" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"SecurityGroupIdentifier" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> SecurityGroupMembership
-newSecurityGroupMembership'  customize = (SecurityGroupMembership <<< customize) { "SecurityGroupIdentifier": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newSecurityGroupMembership' :: ( { "SecurityGroupIdentifier" :: Maybe (String) , "Status" :: Maybe (String) } -> {"SecurityGroupIdentifier" :: Maybe (String) , "Status" :: Maybe (String) } ) -> SecurityGroupMembership
+newSecurityGroupMembership'  customize = (SecurityGroupMembership <<< customize) { "SecurityGroupIdentifier": Nothing, "Status": Nothing }
 
 
 
@@ -1347,8 +1346,8 @@ instance encodeSourceType :: Encode SourceType where encode = genericEncode opti
 
 -- | <p>Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.</p>
 newtype Subnet = Subnet 
-  { "SubnetIdentifier" :: NullOrUndefined (String)
-  , "SubnetAvailabilityZone" :: NullOrUndefined (String)
+  { "SubnetIdentifier" :: Maybe (String)
+  , "SubnetAvailabilityZone" :: Maybe (String)
   }
 derive instance newtypeSubnet :: Newtype Subnet _
 derive instance repGenericSubnet :: Generic Subnet _
@@ -1358,21 +1357,21 @@ instance encodeSubnet :: Encode Subnet where encode = genericEncode options
 
 -- | Constructs Subnet from required parameters
 newSubnet :: Subnet
-newSubnet  = Subnet { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing) }
+newSubnet  = Subnet { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing }
 
 -- | Constructs Subnet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnet' :: ( { "SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (String) } -> {"SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (String) } ) -> Subnet
-newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing) }
+newSubnet' :: ( { "SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (String) } -> {"SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (String) } ) -> Subnet
+newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing }
 
 
 
 -- | <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul>
 newtype SubnetGroup = SubnetGroup 
-  { "SubnetGroupName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "Subnets" :: NullOrUndefined (SubnetList)
+  { "SubnetGroupName" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "Subnets" :: Maybe (SubnetList)
   }
 derive instance newtypeSubnetGroup :: Newtype SubnetGroup _
 derive instance repGenericSubnetGroup :: Generic SubnetGroup _
@@ -1382,12 +1381,12 @@ instance encodeSubnetGroup :: Encode SubnetGroup where encode = genericEncode op
 
 -- | Constructs SubnetGroup from required parameters
 newSubnetGroup :: SubnetGroup
-newSubnetGroup  = SubnetGroup { "Description": (NullOrUndefined Nothing), "SubnetGroupName": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newSubnetGroup  = SubnetGroup { "Description": Nothing, "SubnetGroupName": Nothing, "Subnets": Nothing, "VpcId": Nothing }
 
 -- | Constructs SubnetGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnetGroup' :: ( { "SubnetGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) } -> {"SubnetGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) } ) -> SubnetGroup
-newSubnetGroup'  customize = (SubnetGroup <<< customize) { "Description": (NullOrUndefined Nothing), "SubnetGroupName": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newSubnetGroup' :: ( { "SubnetGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "VpcId" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) } -> {"SubnetGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "VpcId" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) } ) -> SubnetGroup
+newSubnetGroup'  customize = (SubnetGroup <<< customize) { "Description": Nothing, "SubnetGroupName": Nothing, "Subnets": Nothing, "VpcId": Nothing }
 
 
 
@@ -1498,8 +1497,8 @@ instance encodeTStamp :: Encode TStamp where encode = genericEncode options
 
 -- | <p>A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.</p> <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p> <p>You cannot backdate the application of a tag.</p>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "Key" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -1509,12 +1508,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (String) , "Value" :: Maybe (String) } -> {"Key" :: Maybe (String) , "Value" :: Maybe (String) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -1569,7 +1568,7 @@ newTagResourceRequest' _ResourceName _Tags customize = (TagResourceRequest <<< c
 
 
 newtype TagResourceResponse = TagResourceResponse 
-  { "Tags" :: NullOrUndefined (TagList)
+  { "Tags" :: Maybe (TagList)
   }
 derive instance newtypeTagResourceResponse :: Newtype TagResourceResponse _
 derive instance repGenericTagResourceResponse :: Generic TagResourceResponse _
@@ -1579,12 +1578,12 @@ instance encodeTagResourceResponse :: Encode TagResourceResponse where encode = 
 
 -- | Constructs TagResourceResponse from required parameters
 newTagResourceResponse :: TagResourceResponse
-newTagResourceResponse  = TagResourceResponse { "Tags": (NullOrUndefined Nothing) }
+newTagResourceResponse  = TagResourceResponse { "Tags": Nothing }
 
 -- | Constructs TagResourceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTagResourceResponse' :: ( { "Tags" :: NullOrUndefined (TagList) } -> {"Tags" :: NullOrUndefined (TagList) } ) -> TagResourceResponse
-newTagResourceResponse'  customize = (TagResourceResponse <<< customize) { "Tags": (NullOrUndefined Nothing) }
+newTagResourceResponse' :: ( { "Tags" :: Maybe (TagList) } -> {"Tags" :: Maybe (TagList) } ) -> TagResourceResponse
+newTagResourceResponse'  customize = (TagResourceResponse <<< customize) { "Tags": Nothing }
 
 
 
@@ -1610,7 +1609,7 @@ newUntagResourceRequest' _ResourceName _TagKeys customize = (UntagResourceReques
 
 
 newtype UntagResourceResponse = UntagResourceResponse 
-  { "Tags" :: NullOrUndefined (TagList)
+  { "Tags" :: Maybe (TagList)
   }
 derive instance newtypeUntagResourceResponse :: Newtype UntagResourceResponse _
 derive instance repGenericUntagResourceResponse :: Generic UntagResourceResponse _
@@ -1620,23 +1619,23 @@ instance encodeUntagResourceResponse :: Encode UntagResourceResponse where encod
 
 -- | Constructs UntagResourceResponse from required parameters
 newUntagResourceResponse :: UntagResourceResponse
-newUntagResourceResponse  = UntagResourceResponse { "Tags": (NullOrUndefined Nothing) }
+newUntagResourceResponse  = UntagResourceResponse { "Tags": Nothing }
 
 -- | Constructs UntagResourceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUntagResourceResponse' :: ( { "Tags" :: NullOrUndefined (TagList) } -> {"Tags" :: NullOrUndefined (TagList) } ) -> UntagResourceResponse
-newUntagResourceResponse'  customize = (UntagResourceResponse <<< customize) { "Tags": (NullOrUndefined Nothing) }
+newUntagResourceResponse' :: ( { "Tags" :: Maybe (TagList) } -> {"Tags" :: Maybe (TagList) } ) -> UntagResourceResponse
+newUntagResourceResponse'  customize = (UntagResourceResponse <<< customize) { "Tags": Nothing }
 
 
 
 newtype UpdateClusterRequest = UpdateClusterRequest 
   { "ClusterName" :: (String)
-  , "Description" :: NullOrUndefined (String)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "NotificationTopicArn" :: NullOrUndefined (String)
-  , "NotificationTopicStatus" :: NullOrUndefined (String)
-  , "ParameterGroupName" :: NullOrUndefined (String)
-  , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList)
+  , "Description" :: Maybe (String)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "NotificationTopicArn" :: Maybe (String)
+  , "NotificationTopicStatus" :: Maybe (String)
+  , "ParameterGroupName" :: Maybe (String)
+  , "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList)
   }
 derive instance newtypeUpdateClusterRequest :: Newtype UpdateClusterRequest _
 derive instance repGenericUpdateClusterRequest :: Generic UpdateClusterRequest _
@@ -1646,17 +1645,17 @@ instance encodeUpdateClusterRequest :: Encode UpdateClusterRequest where encode 
 
 -- | Constructs UpdateClusterRequest from required parameters
 newUpdateClusterRequest :: String -> UpdateClusterRequest
-newUpdateClusterRequest _ClusterName = UpdateClusterRequest { "ClusterName": _ClusterName, "Description": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NotificationTopicStatus": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing) }
+newUpdateClusterRequest _ClusterName = UpdateClusterRequest { "ClusterName": _ClusterName, "Description": Nothing, "NotificationTopicArn": Nothing, "NotificationTopicStatus": Nothing, "ParameterGroupName": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroupIds": Nothing }
 
 -- | Constructs UpdateClusterRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateClusterRequest' :: String -> ( { "ClusterName" :: (String) , "Description" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "NotificationTopicStatus" :: NullOrUndefined (String) , "ParameterGroupName" :: NullOrUndefined (String) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) } -> {"ClusterName" :: (String) , "Description" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "NotificationTopicArn" :: NullOrUndefined (String) , "NotificationTopicStatus" :: NullOrUndefined (String) , "ParameterGroupName" :: NullOrUndefined (String) , "SecurityGroupIds" :: NullOrUndefined (SecurityGroupIdentifierList) } ) -> UpdateClusterRequest
-newUpdateClusterRequest' _ClusterName customize = (UpdateClusterRequest <<< customize) { "ClusterName": _ClusterName, "Description": (NullOrUndefined Nothing), "NotificationTopicArn": (NullOrUndefined Nothing), "NotificationTopicStatus": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing) }
+newUpdateClusterRequest' :: String -> ( { "ClusterName" :: (String) , "Description" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "NotificationTopicStatus" :: Maybe (String) , "ParameterGroupName" :: Maybe (String) , "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) } -> {"ClusterName" :: (String) , "Description" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "NotificationTopicArn" :: Maybe (String) , "NotificationTopicStatus" :: Maybe (String) , "ParameterGroupName" :: Maybe (String) , "SecurityGroupIds" :: Maybe (SecurityGroupIdentifierList) } ) -> UpdateClusterRequest
+newUpdateClusterRequest' _ClusterName customize = (UpdateClusterRequest <<< customize) { "ClusterName": _ClusterName, "Description": Nothing, "NotificationTopicArn": Nothing, "NotificationTopicStatus": Nothing, "ParameterGroupName": Nothing, "PreferredMaintenanceWindow": Nothing, "SecurityGroupIds": Nothing }
 
 
 
 newtype UpdateClusterResponse = UpdateClusterResponse 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeUpdateClusterResponse :: Newtype UpdateClusterResponse _
 derive instance repGenericUpdateClusterResponse :: Generic UpdateClusterResponse _
@@ -1666,12 +1665,12 @@ instance encodeUpdateClusterResponse :: Encode UpdateClusterResponse where encod
 
 -- | Constructs UpdateClusterResponse from required parameters
 newUpdateClusterResponse :: UpdateClusterResponse
-newUpdateClusterResponse  = UpdateClusterResponse { "Cluster": (NullOrUndefined Nothing) }
+newUpdateClusterResponse  = UpdateClusterResponse { "Cluster": Nothing }
 
 -- | Constructs UpdateClusterResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateClusterResponse' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> UpdateClusterResponse
-newUpdateClusterResponse'  customize = (UpdateClusterResponse <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newUpdateClusterResponse' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> UpdateClusterResponse
+newUpdateClusterResponse'  customize = (UpdateClusterResponse <<< customize) { "Cluster": Nothing }
 
 
 
@@ -1697,7 +1696,7 @@ newUpdateParameterGroupRequest' _ParameterGroupName _ParameterNameValues customi
 
 
 newtype UpdateParameterGroupResponse = UpdateParameterGroupResponse 
-  { "ParameterGroup" :: NullOrUndefined (ParameterGroup)
+  { "ParameterGroup" :: Maybe (ParameterGroup)
   }
 derive instance newtypeUpdateParameterGroupResponse :: Newtype UpdateParameterGroupResponse _
 derive instance repGenericUpdateParameterGroupResponse :: Generic UpdateParameterGroupResponse _
@@ -1707,19 +1706,19 @@ instance encodeUpdateParameterGroupResponse :: Encode UpdateParameterGroupRespon
 
 -- | Constructs UpdateParameterGroupResponse from required parameters
 newUpdateParameterGroupResponse :: UpdateParameterGroupResponse
-newUpdateParameterGroupResponse  = UpdateParameterGroupResponse { "ParameterGroup": (NullOrUndefined Nothing) }
+newUpdateParameterGroupResponse  = UpdateParameterGroupResponse { "ParameterGroup": Nothing }
 
 -- | Constructs UpdateParameterGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateParameterGroupResponse' :: ( { "ParameterGroup" :: NullOrUndefined (ParameterGroup) } -> {"ParameterGroup" :: NullOrUndefined (ParameterGroup) } ) -> UpdateParameterGroupResponse
-newUpdateParameterGroupResponse'  customize = (UpdateParameterGroupResponse <<< customize) { "ParameterGroup": (NullOrUndefined Nothing) }
+newUpdateParameterGroupResponse' :: ( { "ParameterGroup" :: Maybe (ParameterGroup) } -> {"ParameterGroup" :: Maybe (ParameterGroup) } ) -> UpdateParameterGroupResponse
+newUpdateParameterGroupResponse'  customize = (UpdateParameterGroupResponse <<< customize) { "ParameterGroup": Nothing }
 
 
 
 newtype UpdateSubnetGroupRequest = UpdateSubnetGroupRequest 
   { "SubnetGroupName" :: (String)
-  , "Description" :: NullOrUndefined (String)
-  , "SubnetIds" :: NullOrUndefined (SubnetIdentifierList)
+  , "Description" :: Maybe (String)
+  , "SubnetIds" :: Maybe (SubnetIdentifierList)
   }
 derive instance newtypeUpdateSubnetGroupRequest :: Newtype UpdateSubnetGroupRequest _
 derive instance repGenericUpdateSubnetGroupRequest :: Generic UpdateSubnetGroupRequest _
@@ -1729,17 +1728,17 @@ instance encodeUpdateSubnetGroupRequest :: Encode UpdateSubnetGroupRequest where
 
 -- | Constructs UpdateSubnetGroupRequest from required parameters
 newUpdateSubnetGroupRequest :: String -> UpdateSubnetGroupRequest
-newUpdateSubnetGroupRequest _SubnetGroupName = UpdateSubnetGroupRequest { "SubnetGroupName": _SubnetGroupName, "Description": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing) }
+newUpdateSubnetGroupRequest _SubnetGroupName = UpdateSubnetGroupRequest { "SubnetGroupName": _SubnetGroupName, "Description": Nothing, "SubnetIds": Nothing }
 
 -- | Constructs UpdateSubnetGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateSubnetGroupRequest' :: String -> ( { "SubnetGroupName" :: (String) , "Description" :: NullOrUndefined (String) , "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) } -> {"SubnetGroupName" :: (String) , "Description" :: NullOrUndefined (String) , "SubnetIds" :: NullOrUndefined (SubnetIdentifierList) } ) -> UpdateSubnetGroupRequest
-newUpdateSubnetGroupRequest' _SubnetGroupName customize = (UpdateSubnetGroupRequest <<< customize) { "SubnetGroupName": _SubnetGroupName, "Description": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing) }
+newUpdateSubnetGroupRequest' :: String -> ( { "SubnetGroupName" :: (String) , "Description" :: Maybe (String) , "SubnetIds" :: Maybe (SubnetIdentifierList) } -> {"SubnetGroupName" :: (String) , "Description" :: Maybe (String) , "SubnetIds" :: Maybe (SubnetIdentifierList) } ) -> UpdateSubnetGroupRequest
+newUpdateSubnetGroupRequest' _SubnetGroupName customize = (UpdateSubnetGroupRequest <<< customize) { "SubnetGroupName": _SubnetGroupName, "Description": Nothing, "SubnetIds": Nothing }
 
 
 
 newtype UpdateSubnetGroupResponse = UpdateSubnetGroupResponse 
-  { "SubnetGroup" :: NullOrUndefined (SubnetGroup)
+  { "SubnetGroup" :: Maybe (SubnetGroup)
   }
 derive instance newtypeUpdateSubnetGroupResponse :: Newtype UpdateSubnetGroupResponse _
 derive instance repGenericUpdateSubnetGroupResponse :: Generic UpdateSubnetGroupResponse _
@@ -1749,10 +1748,10 @@ instance encodeUpdateSubnetGroupResponse :: Encode UpdateSubnetGroupResponse whe
 
 -- | Constructs UpdateSubnetGroupResponse from required parameters
 newUpdateSubnetGroupResponse :: UpdateSubnetGroupResponse
-newUpdateSubnetGroupResponse  = UpdateSubnetGroupResponse { "SubnetGroup": (NullOrUndefined Nothing) }
+newUpdateSubnetGroupResponse  = UpdateSubnetGroupResponse { "SubnetGroup": Nothing }
 
 -- | Constructs UpdateSubnetGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateSubnetGroupResponse' :: ( { "SubnetGroup" :: NullOrUndefined (SubnetGroup) } -> {"SubnetGroup" :: NullOrUndefined (SubnetGroup) } ) -> UpdateSubnetGroupResponse
-newUpdateSubnetGroupResponse'  customize = (UpdateSubnetGroupResponse <<< customize) { "SubnetGroup": (NullOrUndefined Nothing) }
+newUpdateSubnetGroupResponse' :: ( { "SubnetGroup" :: Maybe (SubnetGroup) } -> {"SubnetGroup" :: Maybe (SubnetGroup) } ) -> UpdateSubnetGroupResponse
+newUpdateSubnetGroupResponse'  customize = (UpdateSubnetGroupResponse <<< customize) { "SubnetGroup": Nothing }
 
